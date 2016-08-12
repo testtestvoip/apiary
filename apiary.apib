@@ -1,0 +1,1038 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# VoipTime Api
+
+# Group Groups
+
+## All groups [/groups]
+
+### Find all group of company [GET]
+    
++ Response 201 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Leads group",
+                "description": "Description",
+                "contacts": 7,
+                "virtual": false
+            }
+        ]
+
+### Create group [POST]
+
++ Request (application/json)
+
+        {
+            "filterId": 1,
+            "leadIds": [1, 2, 3],
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "description": "Nerds"
+        }
+        
++ Response 201 (application/json)
+
+        {
+            "companyId": "abc",
+            "schemaId": 1,
+            "filterId": 1,
+            "leadIds": [1, 2, 3],
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "description": "Nerds",
+            "cloneLeadOnCustomerCreation": false,
+            "defaultGroup": false
+        }
+        
+## Specific group [/groups/{groupId}]
+
+### Get group by id [GET]
+
++ Parameters
+    + groupId (required)
+    
++ Response 200 (application/json)
+
+        {
+            "companyId": "abc",
+            "schemaId": 1,
+            "id": 1,
+            "filterId": 1,
+            "leadIds": [ 1, 2 ,3 ],
+            "lastUpdateDateTime": "2005-08-09T18:31:42.201",
+            "name": "Nerds",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "description": "Nerds",
+            "cloneLeadOnCustomerCreation": false,
+            "defaultGroup": false
+        }
+
+# Group Leads
+
+## Filter leads [/leads/{?filterId}{?limit}{?offset}]
+
+### GET 
+
++ Parameters
+    + filterId (number, required)
+    + limit (number, optional)
+    + offset (number, optional)
+
++ Response 200 (application/json)
+
+        {
+            "leads": [
+                {
+                    "id": 1,
+                    "companyId": "abc",
+                    "groupId": 1,
+                    "statusId": 1,
+                    "email": "foo@bar",
+                    "phones": [
+                        {
+                            "id": 1,
+                            "number": "123",
+                            "active": true,
+                            "type": {
+                                "id": 1,
+                                "label": "foo",
+                                "extensionRequired": false,
+                                "active": true,
+                                "order": 1,
+                                "groupId": 1
+                            }
+                        }
+                    ],
+                    "name": "bar",
+                    "surname": "baz",
+                    "dynamicData": [
+                        {
+                            "foo": "bar"
+                        }
+                    ],
+                    "comments": [
+                        {
+                            "id": 1,
+                            "text": "He knows rm -rf",
+                            "authorId": "abc",
+                            "dateTime": "2005-08-09T18:31:42"
+                        }
+                    ],
+                    "sourceId": 1
+                }
+            ]
+        }
+
+## Find leads by group id [/leads/{?groupId}{?limit}{?offset}{?virtualGroup}]
+
+### GET
+
++ Parameters
+    + groupId (number, required)
+    + virtualGroup (boolean, optional)
+    + limit (number, optional)
+    + offset (number, optional)
+
++ Response 200 (application/json)
+
+        {
+            "leads": [
+                {
+                    "id": 1,
+                    "companyId": "abc",
+                    "groupId": 1,
+                    "statusId": 1,
+                    "email": "foo@bar",
+                    "phones": [
+                        {
+                            "id": 1,
+                            "number": "123",
+                            "active": true,
+                            "type": {
+                                "id": 1,
+                                "label": "foo",
+                                "extensionRequired": false,
+                                "active": true,
+                                "order": 1,
+                                "groupId": 1
+                            }
+                        }
+                    ],
+                    "name": "bar",
+                    "surname": "baz",
+                    "dynamicData": [
+                        {
+                            "foo": "bar"
+                        }
+                    ],
+                    "comments": [
+                        {
+                            "id": 1,
+                            "text": "He knows rm -rf",
+                            "authorId": "abc",
+                            "dateTime": "2005-08-09T18:31:42"
+                        }
+                    ],
+                    "sourceId": 1
+                }
+            ]
+        }
+
+## Get all leads [/leads{?limit}{?offset}]
+
+### GET
+
++ Parameters
+    + limit (number, optional)
+    + offset (number, optional)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "companyId": "abc",
+                "groupId": 1,
+                "statusId": 1,
+                "email": "foo@bar",
+                "phones": [
+                    {
+                        "id": 1,
+                        "number": "123",
+                        "active": true,
+                        "type": {
+                            "id": 1,
+                            "label": "foo",
+                            "extensionRequired": false,
+                            "active": true,
+                            "order": 1,
+                            "groupId": 1
+                        }
+                    }
+                ],
+                "name": "bar",
+                "surname": "baz",
+                "dynamicData": [
+                    {
+                        "foo": "bar"
+                    }
+                ],
+                "comments": [
+                    {
+                        "id": 1,
+                        "text": "He knows rm -rf",
+                        "authorId": "abc",
+                        "dateTime": "2005-08-09T18:31:42"
+                    }
+                ],
+                "sourceId": 1
+            }, {
+                "id": 2,
+                "companyId": "abcd",
+                "groupId": 1,
+                "statusId": 1,
+                "email": "foo@bar.bar",
+                "phones": [
+                    {
+                        "id": 1,
+                        "number": "123",
+                        "active": true,
+                        "type": {
+                            "id": 1,
+                            "label": "foo",
+                            "extensionRequired": false,
+                            "active": true,
+                            "order": 1,
+                            "groupId": 1
+                        }
+                    }
+                ],
+                "name": "fbar",
+                "surname": "baz",
+                "dynamicData": [
+                    {
+                        "foo": "bar"
+                    }
+                ],
+                "comments": [
+                    {
+                        "id": 1,
+                        "text": "He knows rm -rf",
+                        "authorId": "abc",
+                        "dateTime": "2005-08-09T18:31:42"
+                    }
+                ],
+                "sourceId": 1
+            }, {
+                "id": 3,
+                "companyId": "abc",
+                "groupId": 1,
+                "statusId": 1,
+                "email": "foo@bar",
+                "phones": [
+                    {
+                        "id": 1,
+                        "number": "123",
+                        "active": true,
+                        "type": {
+                            "id": 1,
+                            "label": "foo",
+                            "extensionRequired": false,
+                            "active": true,
+                            "order": 1,
+                            "groupId": 1
+                        }
+                    }
+                ],
+                "name": "bar",
+                "surname": "baz",
+                "dynamicData": [
+                    {
+                        "foo": "bar"
+                    }
+                ],
+                "comments": [
+                    {
+                        "id": 1,
+                        "text": "He knows rm -rf",
+                        "authorId": "abc",
+                        "dateTime": "2005-08-09T18:31:42"
+                    }
+                ],
+                "sourceId": 1
+            }, {
+                "id": 4,
+                "companyId": "abcd",
+                "groupId": 1,
+                "statusId": 1,
+                "email": "foo@bar.bar",
+                "phones": [
+                    {
+                        "id": 1,
+                        "number": "123",
+                        "active": true,
+                        "type": {
+                            "id": 1,
+                            "label": "foo",
+                            "extensionRequired": false,
+                            "active": true,
+                            "order": 1,
+                            "groupId": 1
+                        }
+                    }
+                ],
+                "name": "fbar",
+                "surname": "baz",
+                "dynamicData": [
+                    {
+                        "foo": "bar"
+                    }
+                ],
+                "comments": [
+                    {
+                        "id": 1,
+                        "text": "He knows rm -rf",
+                        "authorId": "abc",
+                        "dateTime": "2005-08-09T18:31:42"
+                    }
+                ],
+                "sourceId": 1
+            }
+        ]
+
+
+## Lead operations [/leads/{leadId}]
+
+### Delete lead [DELETE]
+
++ Parameters
+    + leadId (required)
+    
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "companyId": "abc",
+            "groupId": 1,
+            "statusId": 1,
+            "email": "foo@bar",
+            "phones": [
+                {
+                    "id": 1,
+                    "number": "123",
+                    "active": true,
+                    "type": {
+                        "id": 1,
+                        "label": "foo",
+                        "extensionRequired": false,
+                        "active": true,
+                        "order": 1,
+                        "groupId": 1
+                    }
+                }
+            ],
+            "name": "bar",
+            "surname": "baz",
+            "dynamicData": [
+                {
+                    "foo": "bar"
+                }
+            ],
+            "comments": [
+                {
+                    "id": 1,
+                    "text": "He knows rm -rf",
+                    "authorId": "abc",
+                    "dateTime": "2005-08-09T18:31:42"
+                }
+            ],
+            "sourceId": 1
+        }
+        
+        
+## Import leads [/leads/import]
+
+### Import [POST]
+
+
++ Response 200 (application/json)
+
+        {
+            "sheetName": "leads sheet"
+            "targetGroupId": 1,
+            "skipRowsFromTop": 3,
+            "columnMapping": {
+                "filedName1": 3,
+                "filedName2": 1,
+            },
+            "importMode": "ADD_ONLY | ADD_SKIP_DUPLICATES | ADD_UPDATE_EXISTING",
+            "source": "Base64"
+        }
+     
+
+        
+# Group Users
+
+## User ids [/usersIds]
+
+### Get user ids [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "5779fb6342218200012e6349",
+                "name" : "danikkks",
+                "lastname": "sav",
+                "roleName": "role name1"
+            },
+            {
+                "id": "5779fb6342218200012e6349",
+                "name" : "andriy",
+                "lastname": "test",
+                "roleName": "role name2"
+            }
+        ]
+
+## Questions Collection [/users{?exclude}]
+
+### Get user without picture [GET]
+
++ Parameters
+    + exclude (optional, list, `pic`)
+
++ Response 200 (application/json)
+
+        {
+            "id": "57695b7a82f82e0001079bb4",
+            "roleId": "57695b7a82f82e0001079bb4",
+            "name" : "danikkks",
+            "lastname": "last name",
+            "email" : "foo22@bar",
+            "companyId" : "5779fb6342218200012e6348",
+            "position" : "ldksjfldkfjsdlkf",
+            "country" : "1",
+            "phoneNumber" : "234234234",
+            "sendLoginInformationToEmail": "true",
+            "phonePassword": ""
+        }
+        
+
+### Create user [POST]
+
++ Request (application/json)
+
+        {
+            "roleId": "57695b7a82f82e0001079bb4",
+            "name" : "danikkks",
+            "lastname": "last name",
+            "email" : "foo22@bar",
+            "companyId" : "5779fb6342218200012e6348",
+            "position" : "ldksjfldkfjsdlkf",
+            "country" : "1",
+            "userPicture": "base54",
+            "phoneNumber" : "234234234",
+            "sendLoginInformationToEmail": "true",
+            "phonePassword": ""
+        }
+
+
++ Response 201 (application/json)
+
+    + Body
+
+                {
+                    "id": "57695b7a82f82e0001079bb4",
+                    "roleId": "57695b7a82f82e0001079bb4",
+                    "name" : "danikkks",
+                    "lastname": "last name",3
+                    "email" : "foo22@bar",
+                    "companyId" : "5779fb6342218200012e6348",
+                    "position" : "ldksjfldkfjsdlkf",
+                    "country" : "1",
+                    "userPicture": "base54",
+                    "phoneNumber" : "234234234",
+                    "sendLoginInformationToEmail": "true",
+                    "phonePassword": ""
+                }
+
+# Group Lead schemas
+
+## Specific lead schema [/leadSchemas/{schemaId}]
+
+### Get schema [GET]
+
++ Parameters
+    + schemaId (required)
+    
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "dynamicFields": [
+                {
+                    "id": 1,
+                    "name": "Country",
+                    "visibilityOptions": {
+                        "id": 1,
+                        "leadCard": true
+                    },
+                    "dataType": "STRING"
+                },
+                {
+                    "id": 2,
+                    "name": "Age",
+                    "visibilityOptions": {
+                        "id": 2,
+                        "leadCard": true
+                    },
+                    "dataType": "NUMBER"
+                },
+                {
+                    "id": 3,
+                    "name": "Rating",
+                    "visibilityOptions": {
+                        "id": 3,
+                        "leadCard": true
+                    },
+                    "dataType": "DOUBLE"
+                },
+                {
+                    "id": 4,
+                    "name": "Geek",
+                    "visibilityOptions": {
+                        "id": 4,
+                        "leadCard": true
+                    },
+                    "dataType": "BOOLEAN"
+                }
+            ],
+            "staticFields": [
+                {
+                    "id": 5,
+                    "name": "groupId",
+                    "visibilityOptions": {
+                        "id": 5,
+                        "leadCard": true
+                    }
+                }
+            ],
+            "bridgeConfiguration": {
+                "id": 1,
+                "fieldBridges": [
+                    {
+                        "id": 1,
+                        "fieldId": 1,
+                        "remoteConfiguration": {
+                            "urlTemplate": "http://company.com",
+                            "headers": [
+                                "x-auth-token": "abc"
+                            ],
+                            "method": "GET",
+                            "body": "{}",
+                            "path": "$..author"
+                        }
+                    }
+                ]
+            },
+            "defaultLeadStatusId": 1
+        }
+        
+## Lead fields [/leadSchemas/fields{?type}]
+
+### Get schema [GET]
+
++ Parameters
+    + type (required)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 5,
+                "name": "groupId",
+                "visibilityOptions": {
+                    "id": 5,
+                    "leadCard": true
+                }
+            }
+        ]
+        
+# Group Settings
+
+## Lead table settings [/leads/tableSettings]
+
+### Get lead table settings [GET]
+    
++ Response 200 (application/json)
+
+        {
+            "contactsPerPage": 2,
+            "fields": [
+            {
+            "fieldName": "field1",
+            "visible": true,
+            "serialNumber": 1
+            }
+            ]
+        }
+
+### Save lead table settings [POST]
+    
++ Request 200 (application/json)
+
+        {
+            "contactsPerPage": 10,
+            "fields": [
+            {
+            "fieldName": "field1",
+            "visible": true,
+            "serialNumber": 1
+            }
+            ]
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "companyId": "dsff23f213f223",
+            "contactsPerPage": 10,
+            "fields": [
+            {
+            "fieldName": "field1",
+            "visible": true,
+            "serialNumber": 1
+            }
+            ]
+        }
+        
+# Group Filter
+
+## Group filters [/filters{?groupId}]
+
+### Get group filters [GET]
+
++ Parameters
+    + groupId (optional)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 21,
+                "name": "All",
+                "groupId": 33,
+                "criterias": [
+                    {
+                        "id": 42,
+                        "fieldId": 34,
+                        "operator": "=",
+                        "value": "foo",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 43,
+                        "fieldId": 35,
+                        "operator": ">",
+                        "value": "4",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 44,
+                        "fieldId": 35,
+                        "operator": ">=",
+                        "value": "5",
+                        "dynamic": "true"
+                    },
+                    {
+                        "id": 45,
+                        "fieldId": 36,
+                        "operator": "<",
+                        "value": "3",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 46,
+                        "fieldId": 37,
+                        "operator": "<=",
+                        "value": "2",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 47,
+                        "fieldId": 38,
+                        "operator": "!=",
+                        "value": "foo",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 48,
+                        "fieldId": 39,
+                        "operator": "like",
+                        "value": "%foo",
+                        "dynamic": "false"
+                    }
+                ]
+            }
+        ]
+
+
+### Create filter [POST]
+    
++ Request (application/json)
+
+        {
+            "name": "All",
+            "groupId": 33,
+            "criterias": [
+                {
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+
++ Request (application/json)
+
+        {
+            "name": "All",
+            "criterias": [
+                {
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+            
++ Response 201 (application/json)
+    
+        {
+            "id": 1
+            "name": "All",
+            "groupId": 33,
+            "criterias": [
+                {
+                    "id": 1
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+
++ Response 201 (application/json)
+    
+        {
+            "id": 1
+            "name": "All",
+            "companyId": "sf2827278f29f2f",
+            "criterias": [
+                {
+                    "id": 1
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+
+
+## All filters [/filters]
+
+### Get company filters [GET]
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 21,
+                "name": "All",
+                "groupId": 33,
+                "criterias": [
+                    {
+                        "id": 42,
+                        "fieldId": 34,
+                        "operator": "=",
+                        "value": "foo",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 43,
+                        "fieldId": 35,
+                        "operator": ">",
+                        "value": "4",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 44,
+                        "fieldId": 35,
+                        "operator": ">=",
+                        "value": "5",
+                        "dynamic": "true"
+                    },
+                    {
+                        "id": 45,
+                        "fieldId": 36,
+                        "operator": "<",
+                        "value": "3",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 46,
+                        "fieldId": 37,
+                        "operator": "<=",
+                        "value": "2",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 47,
+                        "fieldId": 38,
+                        "operator": "!=",
+                        "value": "foo",
+                        "dynamic": "false"
+                    },
+                    {
+                        "id": 48,
+                        "fieldId": 39,
+                        "operator": "like",
+                        "value": "%foo",
+                        "dynamic": "false"
+                    }
+                ]
+            }
+        ]
+
+### Create filter [POST]
+    
++ Request (application/json)
+
+        {
+            "name": "All",
+            "criterias": [
+                {
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+        
+        
++ Response 201 (application/json)
+    
+        {
+            "id": 1
+            "name": "All",
+            "companyId": "sf2827278f29f2f",
+            "criterias": [
+                {
+                    "id": 1
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+        
+
+   
+## Specific filter operations [/filters/{filterId}]
+        
+### Delete filter [DELETE]
+
++ Parameters
+    + filterId (required)
+    
++ Response 200
+
+### Update filter [PUT]
+
++ Parameters
+    + filterId (required)
+    
++ Request (application/json)
+
+        {
+            "id": 21,
+            "name": "All",
+            "groupId": 33,
+            "criterias": [
+                {
+                    "id": 42,
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 43,
+                    "fieldId": 35,
+                    "operator": ">",
+                    "value": "4",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 44,
+                    "fieldId": 35,
+                    "operator": ">=",
+                    "value": "5",
+                    "dynamic": "true"
+                },
+                {
+                    "id": 45,
+                    "fieldId": 36,
+                    "operator": "<",
+                    "value": "3",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 46,
+                    "fieldId": 37,
+                    "operator": "<=",
+                    "value": "2",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 47,
+                    "fieldId": 38,
+                    "operator": "!=",
+                    "value": "foo",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 48,
+                    "fieldId": 39,
+                    "operator": "like",
+                    "value": "%foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": 21,
+            "name": "All",
+            "groupId": 33,
+            "criterias": [
+                {
+                    "id": 42,
+                    "fieldId": 34,
+                    "operator": "=",
+                    "value": "foo",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 43,
+                    "fieldId": 35,
+                    "operator": ">",
+                    "value": "4",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 44,
+                    "fieldId": 35,
+                    "operator": ">=",
+                    "value": "5",
+                    "dynamic": "true"
+                },
+                {
+                    "id": 45,
+                    "fieldId": 36,
+                    "operator": "<",
+                    "value": "3",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 46,
+                    "fieldId": 37,
+                    "operator": "<=",
+                    "value": "2",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 47,
+                    "fieldId": 38,
+                    "operator": "!=",
+                    "value": "foo",
+                    "dynamic": "false"
+                },
+                {
+                    "id": 48,
+                    "fieldId": 39,
+                    "operator": "like",
+                    "value": "%foo",
+                    "dynamic": "false"
+                }
+            ]
+        }
