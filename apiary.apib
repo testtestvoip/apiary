@@ -364,6 +364,52 @@ HOST: http://polls.apiblueprint.org/
 
 ## Lead operations [/leads/{leadId}]
 
+### Get lead [GET]
+
++ Parameters
+    + leadId (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "companyId": "abc",
+            "groupId": 1,
+            "statusId": 1,
+            "email": "foo@bar",
+            "phones": [
+                {
+                    "id": 1,
+                    "number": "123",
+                    "active": true,
+                    "type": {
+                        "id": 1,
+                        "label": "foo",
+                        "extensionRequired": false,
+                        "active": true,
+                        "order": 1,
+                        "groupId": 1
+                    }
+                }
+            ],
+            "name": "bar",
+            "surname": "baz",
+            "dynamicData": [
+                {
+                    "foo": "bar"
+                }
+            ],
+            "comments": [
+                {
+                    "id": 1,
+                    "text": "He knows rm -rf",
+                    "authorId": "abc",
+                    "dateTime": "2005-08-09T18:31:42"
+                }
+            ],
+            "sourceId": 1
+        }
+
 ### Delete lead [DELETE]
 
 + Parameters
