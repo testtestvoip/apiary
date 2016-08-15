@@ -1090,3 +1090,25 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 1,
             "active": true
         }
+
+# Reports
+
+## Lead call history [/reports/leads/{id}/calls]
+
+### Get lead call history [GET]
+
++ Parameters
+    + id (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": "abc123",
+            "date": "2005-08-09T18:31:42",
+            "direction": "INBOUND | OUTGOING",
+            "hangUpCause": "abc",
+            "phone": "+180..",
+            "callResultStatusId": "abc132",
+            "leadStatusId": 1,
+            "callId": "abc123"
+        }
