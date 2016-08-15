@@ -88,6 +88,30 @@ HOST: http://polls.apiblueprint.org/
             "defaultGroup": false
         }
 
+## Group's lead statuses [/groups/{groupId}/leadStatuses]
+
+### GET
+
++ Parameters
+    + groupId (required)
+
++ Response 200 (application/json)
+        [
+            {
+                "id": 1,
+                "name": "Warm",
+                "description": "Interested in",
+                "companyId": "abc123",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 164
+                },
+                "order": 1,
+                "groupId": 1
+            }
+        ]
+
 # Group Leads
 
 ## Filter leads [/leads/{?filterId}{?limit}{?offset}]
