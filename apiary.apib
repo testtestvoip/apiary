@@ -115,6 +115,50 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Leads
 
+## Attachments [/leads/{leadId}/attachments]
+
+### Add lead attachment [POST]
+
++ Parameters
+    + leadId (required)
+
++ Request (application/json)
+
+        {
+            "leadId": 1,
+            "performerId": 1,
+            "name": "orders.xlsx",
+            "blob": "base64 encoded attachment"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "leadId": 1,
+            "performerId": 1,
+            "name": "orders.xlsx",
+            "uploadDateTime": "2005-08-09T18:31:42.201",
+            "blob": "base64 encoded attachment"
+        }
+
+### Get lead attachments [GET]
+
++ Parameters
+    + leadId (required)
+
++ Response 201 (application/json)
+
+        [
+            {
+                "id": 1,
+                "leadId": 1,
+                "performerId": 1,
+                "name": "orders.xlsx",
+                "uploadDateTime": "2005-08-09T18:31:42.201"
+            }
+        ]
+
 ## Filter leads [/leads/{?filterId}{?limit}{?offset}]
 
 ### GET 
@@ -450,9 +494,7 @@ HOST: http://polls.apiblueprint.org/
 
 ### Get lead events [GET /leads/{leadId}/events]
 
-
-### Get lead events [GET]
-
+\
 + Parameters
     + leadId (required)
 
@@ -476,7 +518,6 @@ HOST: http://polls.apiblueprint.org/
         {
             "id": 1,
             "dateTime": "2005-08-09T18:31:42",
-            "leadId": 1,
             "groupId": 1,
             "text": "bal bla bla",
             "blacklisted": false
@@ -1226,47 +1267,3 @@ HOST: http://polls.apiblueprint.org/
             "leadStatusId": 1,
             "callId": "abc123"
         }
-
-# Group Attachments
-
-### Add lead attachment [POST /leads/{leadId}/attachments]
-
-+ Parameters
-    + leadId (required)
-
-+ Request (application/json)
-
-        {
-            "leadId": 1,
-            "performerId": 1,
-            "name": "orders.xlsx",
-            "blob": "base64 encoded attachment"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "id": 1,
-            "leadId": 1,
-            "performerId": 1,
-            "name": "orders.xlsx",
-            "uploadDateTime": "2005-08-09T18:31:42.201",
-            "blob": "base64 encoded attachment"
-        }
-
-### Get lead attachments [GET /leads/{leadId}/attachments]
-
-+ Parameters
-    + leadId (required)
-
-+ Response 201 (application/json)
-
-        [
-            {
-                "id": 1,
-                "leadId": 1,
-                "performerId": 1,
-                "name": "orders.xlsx",
-                "uploadDateTime": "2005-08-09T18:31:42.201"
-            }
-        ]
