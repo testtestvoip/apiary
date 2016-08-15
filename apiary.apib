@@ -458,11 +458,81 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "id": 1,
-            "dateTime": "",
+            "dateTime": "2005-08-09T18:31:42",
             "leadId": 1,
             "groupId": 1,
             "type": "LeadCommentedEvent"
         }
+
+
+## Lead callbacks [/leads/{leadId}/callbacks/{?callbackEventId}]
+
++ Parameters
+    + leadId (required)
+
+### Get lead callbacks [GET]
+
++ Parameters
+    + callbackEventId (optional)
+
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "dateTime": "2005-08-09T18:31:42",
+            "leadId": 1,
+            "groupId": 1,
+            "description": "",
+            "remindOnly": false,
+            "status": "status",
+            "performerId": "1",
+            "phoneId": "1",
+            "type": "LeadCallbackAddedEvent"
+        }
+
+### Add lead callbacks [POST]
+
++ Parameters
+    + callbackEventId (optional)
+
++ Request 200 (application/json)
+
+        {
+            "dateTime": "2005-08-09T18:31:42",
+            "leadId": 1,
+            "groupId": 1,
+            "description": "",
+            "remindOnly": false,
+            "status": "status",
+            "performerId": "1",
+            "phoneId": "1",
+            "type": "LeadCallbackAddedEvent"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "dateTime": "2005-08-09T18:31:42",
+            "leadId": 1,
+            "groupId": 1,
+            "description": "",
+            "remindOnly": false,
+            "status": "status",
+            "performerId": "1",
+            "phoneId": "1",
+            "type": "LeadCallbackAddedEvent"
+        }
+
+
+### Add lead callbacks [DELETE]
+
++ Parameters
+    + callbackEventId (required)
+
++ Response 200 (application/json)
+
 
 ## Import leads [/leads/import]
 
