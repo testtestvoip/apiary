@@ -446,7 +446,9 @@ HOST: http://polls.apiblueprint.org/
             "sourceId": 1
         }
 
-## Lead events [/leads/{leadId}/events]
+## Lead events [/]
+
+### Get lead events [GET /leads/{leadId}/events]
 
 
 ### Get lead events [GET]
@@ -464,7 +466,10 @@ HOST: http://polls.apiblueprint.org/
             "type": "LeadCommentedEvent"
         }
 
-### Add comment [POST /comments]
+### Add comment [POST /leads/{leadId}/events/comments]
+
++ Parameters
+    + leadId (required)
 
 + Response 200 (application/json)
 
@@ -477,12 +482,14 @@ HOST: http://polls.apiblueprint.org/
             "blacklisted": false
         }
 
-### Delete comment [DELETE /{commentId}]
+### Delete comment [DELETE /leads/{leadId}/events/{commentId}]
 
 + Parameters
     + commentId (required)
+    + leadId (required)
 
 + Response 200 (application/json)
+
 
 
 ## Lead callbacks [/leads/{leadId}/callbacks/{callbackEventId}]
