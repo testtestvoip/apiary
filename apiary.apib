@@ -1128,3 +1128,21 @@ HOST: http://polls.apiblueprint.org/
                 }
             ]
         }
+
+# Lead sources
+
+## Lead source operations [/sources/{id}]
+
+### Get lead source [GET]
+
++ Parameters
+    + id (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "name": "Google",
+            "groupId": 1,
+            "active": true
+        }
