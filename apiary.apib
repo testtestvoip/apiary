@@ -1237,6 +1237,7 @@ HOST: http://polls.apiblueprint.org/
         }
 
 + Response 201 (application/json)
+
         {
             "id": 1,
             "leadId": 1,
@@ -1245,3 +1246,20 @@ HOST: http://polls.apiblueprint.org/
             "uploadDateTime": "2005-08-09T18:31:42.201",
             "blob": "base64 encoded attachment"
         }
+
+### Get lead attachments [GET /leads/{leadId}/attachments]
+
++ Parameters
+    + leadId (required)
+
++ Response 201 (application/json)
+
+        [
+            {
+                "id": 1,
+                "leadId": 1,
+                "performerId": 1,
+                "name": "orders.xlsx",
+                "uploadDateTime": "2005-08-09T18:31:42.201"
+            }
+        ]
