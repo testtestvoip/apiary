@@ -476,8 +476,25 @@ HOST: http://polls.apiblueprint.org/
             ],
             "sourceId": 1
         }
-        
-        
+
+## Lead events [/leads/{leadId}/events]
+
+
+### Get lead events [GET]
+
++ Parameters
+    + leadId (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "dateTime": "",
+            "leadId": 1,
+            "groupId": 1,
+            "type": "LeadCommentedEvent"
+        }
+
 ## Import leads [/leads/import]
 
 ### Import [POST]
