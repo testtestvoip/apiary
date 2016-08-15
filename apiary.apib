@@ -450,6 +450,9 @@ HOST: http://polls.apiblueprint.org/
 
 ### Get lead events [GET /leads/{leadId}/events]
 
+
+### Get lead events [GET]
+
 + Parameters
     + leadId (required)
 
@@ -576,9 +579,9 @@ HOST: http://polls.apiblueprint.org/
             "importMode": "ADD_ONLY | ADD_SKIP_DUPLICATES | ADD_UPDATE_EXISTING",
             "source": "Base64"
         }
-     
 
-        
+
+
 # Group Users
 
 ## User ids [/usersIds]
@@ -624,7 +627,7 @@ HOST: http://polls.apiblueprint.org/
             "sendLoginInformationToEmail": "true",
             "phonePassword": ""
         }
-        
+
 
 ### Create user [POST]
 
@@ -672,7 +675,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Parameters
     + schemaId (required)
-    
+
 + Response 200 (application/json)
 
         {
@@ -745,14 +748,14 @@ HOST: http://polls.apiblueprint.org/
             },
             "defaultLeadStatusId": 1
         }
-        
+
 ## Lead fields [/leadSchemas/fields{?type}]
 
 ### Get schema [GET]
 
 + Parameters
     + type (required)
-    
+
 + Response 200 (application/json)
 
         [
@@ -765,13 +768,13 @@ HOST: http://polls.apiblueprint.org/
                 }
             }
         ]
-        
+
 # Group Settings
 
 ## Lead table settings [/leads/tableSettings]
 
 ### Get lead table settings [GET]
-    
+
 + Response 200 (application/json)
 
         {
@@ -786,7 +789,7 @@ HOST: http://polls.apiblueprint.org/
         }
 
 ### Save lead table settings [POST]
-    
+
 + Request 200 (application/json)
 
         {
@@ -799,7 +802,7 @@ HOST: http://polls.apiblueprint.org/
             }
             ]
         }
-    
+
 + Response 200 (application/json)
 
         {
@@ -813,7 +816,7 @@ HOST: http://polls.apiblueprint.org/
             }
             ]
         }
-        
+
 # Group Filter
 
 ## Group filters [/filters{?groupId}]
@@ -822,7 +825,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Parameters
     + groupId (optional)
-    
+
 + Response 200 (application/json)
 
         [
@@ -886,7 +889,7 @@ HOST: http://polls.apiblueprint.org/
 
 
 ### Create filter [POST]
-    
+
 + Request (application/json)
 
         {
@@ -915,9 +918,9 @@ HOST: http://polls.apiblueprint.org/
                 }
             ]
         }
-            
+
 + Response 201 (application/json)
-    
+
         {
             "id": 1
             "name": "All",
@@ -934,7 +937,7 @@ HOST: http://polls.apiblueprint.org/
         }
 
 + Response 201 (application/json)
-    
+
         {
             "id": 1
             "name": "All",
@@ -954,7 +957,7 @@ HOST: http://polls.apiblueprint.org/
 ## All filters [/filters]
 
 ### Get company filters [GET]
-    
+
 + Response 200 (application/json)
 
         [
@@ -1017,7 +1020,7 @@ HOST: http://polls.apiblueprint.org/
         ]
 
 ### Create filter [POST]
-    
+
 + Request (application/json)
 
         {
@@ -1031,10 +1034,10 @@ HOST: http://polls.apiblueprint.org/
                 }
             ]
         }
-        
-        
+
+
 + Response 201 (application/json)
-    
+
         {
             "id": 1
             "name": "All",
@@ -1049,23 +1052,23 @@ HOST: http://polls.apiblueprint.org/
                 }
             ]
         }
-        
 
-   
+
+
 ## Specific filter operations [/filters/{filterId}]
-        
+
 ### Delete filter [DELETE]
 
 + Parameters
     + filterId (required)
-    
+
 + Response 200
 
 ### Update filter [PUT]
 
 + Parameters
     + filterId (required)
-    
+
 + Request (application/json)
 
         {
@@ -1124,7 +1127,7 @@ HOST: http://polls.apiblueprint.org/
                 }
             ]
         }
-        
+
 + Response 200 (application/json)
 
         {
@@ -1202,7 +1205,7 @@ HOST: http://polls.apiblueprint.org/
             "active": true
         }
 
-# Reports
+# Group Reports
 
 ## Lead call history [/reports/leads/{id}/calls]
 
@@ -1222,4 +1225,30 @@ HOST: http://polls.apiblueprint.org/
             "callResultStatusId": "abc132",
             "leadStatusId": 1,
             "callId": "abc123"
+        }
+
+# Group Attachments
+
+### Add lead attachment [POST /leads/{leadId}/attachments]
+
++ Parameters
+    + leadId (required)
+
++ Request (application/json)
+
+        {
+            "leadId": 1,
+            "performerId": 1,
+            "name": "orders.xlsx",
+            "blob": "base64 encoded attachment"
+        }
+
++ Response 201 (application/json)
+        {
+            "id": 1,
+            "leadId": 1,
+            "performerId": 1,
+            "name": "orders.xlsx",
+            "uploadDateTime": "2005-08-09T18:31:42.201",
+            "blob": "base64 encoded attachment"
         }
