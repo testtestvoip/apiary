@@ -446,6 +446,28 @@ HOST: http://polls.apiblueprint.org/
             "sourceId": 1
         }
 
+### Add comment [POST /comments]
+
++ Parameters
+    + leadId (required)
+
++ Request (application/json)
+
+        {
+            "text": "He knows rm -rf",
+            "authorId": "abc",
+            "dateTime": "2005-08-09T18:31:42"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "text": "He knows rm -rf",
+            "authorId": "abc",
+            "dateTime": "2005-08-09T18:31:42"
+        }
+
 ## Lead events [/]
 
 ### Get lead events [GET /leads/{leadId}/events]
