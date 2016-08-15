@@ -88,6 +88,31 @@ HOST: http://polls.apiblueprint.org/
             "defaultGroup": false
         }
 
+## Group's lead statuses [/groups/{groupId}/leadStatuses]
+
+### GET
+
++ Parameters
+    + groupId (required)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Warm",
+                "description": "Interested in",
+                "companyId": "abc123",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 164
+                },
+                "order": 1,
+                "groupId": 1
+            }
+        ]
+
 # Group Leads
 
 ## Filter leads [/leads/{?filterId}{?limit}{?offset}]
@@ -114,14 +139,7 @@ HOST: http://polls.apiblueprint.org/
                             "id": 1,
                             "number": "123",
                             "active": true,
-                            "type": {
-                                "id": 1,
-                                "label": "foo",
-                                "extensionRequired": false,
-                                "active": true,
-                                "order": 1,
-                                "groupId": 1
-                            }
+                            "label": "Work phone"
                         }
                     ],
                     "name": "bar",
@@ -169,14 +187,7 @@ HOST: http://polls.apiblueprint.org/
                             "id": 1,
                             "number": "123",
                             "active": true,
-                            "type": {
-                                "id": 1,
-                                "label": "foo",
-                                "extensionRequired": false,
-                                "active": true,
-                                "order": 1,
-                                "groupId": 1
-                            }
+                            "label": "Work phone"
                         }
                     ],
                     "name": "bar",
@@ -242,14 +253,7 @@ HOST: http://polls.apiblueprint.org/
                         "id": 1,
                         "number": "123",
                         "active": true,
-                        "type": {
-                            "id": 1,
-                            "label": "foo",
-                            "extensionRequired": false,
-                            "active": true,
-                            "order": 1,
-                            "groupId": 1
-                        }
+                        "label": "foo"
                     }
                 ],
                 "name": "bar",
@@ -279,14 +283,7 @@ HOST: http://polls.apiblueprint.org/
                         "id": 1,
                         "number": "123",
                         "active": true,
-                        "type": {
-                            "id": 1,
-                            "label": "foo",
-                            "extensionRequired": false,
-                            "active": true,
-                            "order": 1,
-                            "groupId": 1
-                        }
+                        "label": "foo"
                     }
                 ],
                 "name": "fbar",
@@ -316,14 +313,7 @@ HOST: http://polls.apiblueprint.org/
                         "id": 1,
                         "number": "123",
                         "active": true,
-                        "type": {
-                            "id": 1,
-                            "label": "foo",
-                            "extensionRequired": false,
-                            "active": true,
-                            "order": 1,
-                            "groupId": 1
-                        }
+                        "label": "foo"
                     }
                 ],
                 "name": "bar",
@@ -353,14 +343,7 @@ HOST: http://polls.apiblueprint.org/
                         "id": 1,
                         "number": "123",
                         "active": true,
-                        "type": {
-                            "id": 1,
-                            "label": "foo",
-                            "extensionRequired": false,
-                            "active": true,
-                            "order": 1,
-                            "groupId": 1
-                        }
+                        "label": "foo"
                     }
                 ],
                 "name": "fbar",
@@ -403,14 +386,7 @@ HOST: http://polls.apiblueprint.org/
                     "id": 1,
                     "number": "123",
                     "active": true,
-                    "type": {
-                        "id": 1,
-                        "label": "foo",
-                        "extensionRequired": false,
-                        "active": true,
-                        "order": 1,
-                        "groupId": 1
-                    }
+                    "label": "foo"
                 }
             ],
             "name": "bar",
@@ -449,14 +425,7 @@ HOST: http://polls.apiblueprint.org/
                     "id": 1,
                     "number": "123",
                     "active": true,
-                    "type": {
-                        "id": 1,
-                        "label": "foo",
-                        "extensionRequired": false,
-                        "active": true,
-                        "order": 1,
-                        "groupId": 1
-                    }
+                    "label": "foo"
                 }
             ],
             "name": "bar",
@@ -1119,4 +1088,22 @@ HOST: http://polls.apiblueprint.org/
                     "dynamic": "false"
                 }
             ]
+        }
+
+# Group Lead sources
+
+## Lead source operations [/sources/{id}]
+
+### Get lead source [GET]
+
++ Parameters
+    + id (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "name": "Google",
+            "groupId": 1,
+            "active": true
         }
