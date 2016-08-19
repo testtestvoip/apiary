@@ -281,7 +281,7 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-## Get all leads [/leads{?limit}{?offset}]
+## Leads [/leads{?limit}{?offset}]
 
 ### GET
 
@@ -415,8 +415,80 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-
 ## Lead operations [/leads/{leadId}]
+
+### Update lead [PUT]
+
++ Parameters
+    + leadId (required)
+
++ Request (application/json)
+
+        {
+            "id": 1,
+            "companyId": "abc",
+            "groupId": 1,
+            "statusId": 1,
+            "email": "foo@bar",
+            "phones": [
+                {
+                    "id": 1,
+                    "number": "123",
+                    "active": true,
+                    "label": "foo"
+                }
+            ],
+            "name": "bar",
+            "surname": "baz",
+            "dynamicData": [
+                {
+                    "foo": "bar"
+                }
+            ],
+            "comments": [
+                {
+                    "id": 1,
+                    "text": "He knows rm -rf",
+                    "authorId": "abc",
+                    "dateTime": "2005-08-09T18:31:42"
+                }
+            ],
+            "sourceId": 1
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "companyId": "abc",
+            "groupId": 1,
+            "statusId": 1,
+            "email": "foo@bar",
+            "phones": [
+                {
+                    "id": 1,
+                    "number": "123",
+                    "active": true,
+                    "label": "foo"
+                }
+            ],
+            "name": "bar",
+            "surname": "baz",
+            "dynamicData": [
+                {
+                    "foo": "bar"
+                }
+            ],
+            "comments": [
+                {
+                    "id": 1,
+                    "text": "He knows rm -rf",
+                    "authorId": "abc",
+                    "dateTime": "2005-08-09T18:31:42"
+                }
+            ],
+            "sourceId": 1
+        }
 
 ### Get lead [GET]
 
@@ -500,7 +572,6 @@ HOST: http://polls.apiblueprint.org/
 
 ### Get lead events [GET /leads/{leadId}/events]
 
-\
 + Parameters
     + leadId (required)
 
