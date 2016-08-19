@@ -866,6 +866,150 @@ HOST: http://polls.apiblueprint.org/
             },
             "defaultLeadStatusId": 1
         }
+        
+### Update schema [PUT]
+
++ Parameters
+    + schemaId (required)
+
++ Request 200 (application/json)
+
+        {
+            "dynamicFields": [
+                {
+                    "name": "Country",
+                    "visibilityOptions": {
+                        "id": 1,
+                        "leadCard": true
+                    },
+                    "dataType": "STRING"
+                },
+                {
+                    "name": "Age",
+                    "visibilityOptions": {
+                        "id": 2,
+                        "leadCard": true
+                    },
+                    "dataType": "NUMBER"
+                },
+                {
+                    "name": "Rating",
+                    "visibilityOptions": {
+                        "id": 3,
+                        "leadCard": true
+                    },
+                    "dataType": "DOUBLE"
+                },
+                {
+                    "name": "Geek",
+                    "visibilityOptions": {
+                        "id": 4,
+                        "leadCard": true
+                    },
+                    "dataType": "BOOLEAN"
+                }
+            ],
+            "staticFields": [
+                {
+                    "name": "groupId",
+                    "visibilityOptions": {
+                        "id": 5,
+                        "leadCard": true
+                    }
+                }
+            ],
+            "bridgeConfiguration": {
+                "id": 1,
+                "fieldBridges": [
+                    {
+                        "fieldId": 1,
+                        "remoteConfiguration": {
+                            "urlTemplate": "http://company.com",
+                            "headers": [
+                                "x-auth-token": "abc"
+                            ],
+                            "method": "GET",
+                            "body": "{}",
+                            "path": "$..author"
+                        }
+                    }
+                ]
+            },
+            "defaultLeadStatusId": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "dynamicFields": [
+                {
+                    "id": 1,
+                    "name": "Country",
+                    "visibilityOptions": {
+                        "id": 1,
+                        "leadCard": true
+                    },
+                    "dataType": "STRING"
+                },
+                {
+                    "id": 2,
+                    "name": "Age",
+                    "visibilityOptions": {
+                        "id": 2,
+                        "leadCard": true
+                    },
+                    "dataType": "NUMBER"
+                },
+                {
+                    "id": 3,
+                    "name": "Rating",
+                    "visibilityOptions": {
+                        "id": 3,
+                        "leadCard": true
+                    },
+                    "dataType": "DOUBLE"
+                },
+                {
+                    "id": 4,
+                    "name": "Geek",
+                    "visibilityOptions": {
+                        "id": 4,
+                        "leadCard": true
+                    },
+                    "dataType": "BOOLEAN"
+                }
+            ],
+            "staticFields": [
+                {
+                    "id": 5,
+                    "name": "groupId",
+                    "visibilityOptions": {
+                        "id": 5,
+                        "leadCard": true
+                    }
+                }
+            ],
+            "bridgeConfiguration": {
+                "id": 1,
+                "fieldBridges": [
+                    {
+                        "id": 1,
+                        "fieldId": 1,
+                        "remoteConfiguration": {
+                            "urlTemplate": "http://company.com",
+                            "headers": [
+                                "x-auth-token": "abc"
+                            ],
+                            "method": "GET",
+                            "body": "{}",
+                            "path": "$..author"
+                        }
+                    }
+                ]
+            },
+            "defaultLeadStatusId": 1
+        }
 
 ## Lead fields [/leadSchemas/fields{?type}]
 
