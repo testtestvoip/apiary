@@ -17,6 +17,7 @@ HOST: http://polls.apiblueprint.org/
                 "name": "Leads group",
                 "description": "Description",
                 "contacts": 7,
+                "schemaId": 23,
                 "virtual": false
             }
         ]
@@ -854,9 +855,9 @@ HOST: http://polls.apiblueprint.org/
                         "fieldId": 1,
                         "remoteConfiguration": {
                             "urlTemplate": "http://company.com",
-                            "headers": [
+                            "headers": {
                                 "x-auth-token": "abc"
-                            ],
+                            },
                             "method": "GET",
                             "body": "{}",
                             "path": "$..author"
@@ -925,9 +926,9 @@ HOST: http://polls.apiblueprint.org/
                         "fieldId": 1,
                         "remoteConfiguration": {
                             "urlTemplate": "http://company.com",
-                            "headers": [
+                            "headers": {
                                 "x-auth-token": "abc"
-                            ],
+                            },
                             "method": "GET",
                             "body": "{}",
                             "path": "$..author"
@@ -998,9 +999,9 @@ HOST: http://polls.apiblueprint.org/
                         "fieldId": 1,
                         "remoteConfiguration": {
                             "urlTemplate": "http://company.com",
-                            "headers": [
+                            "headers": {
                                 "x-auth-token": "abc"
-                            ],
+                            },
                             "method": "GET",
                             "body": "{}",
                             "path": "$..author"
