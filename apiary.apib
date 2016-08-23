@@ -611,71 +611,115 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Lead callbacks [/leads/{leadId}/callbacks/{callbackEventId}]
+## Lead callbacks
+
+### Get lead callbacks [GET /callbacks{?leadId}]
 
 + Parameters
     + leadId (required)
 
-### Get lead callbacks [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "leadId": 1,
+                "description": "",
+                "remindOnly": false,
+                "name": "name",
+                "userId": "userId",
+                "phoneId": "1",
+                "dateTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "beforeReminder": {
+                    "number": 15,
+                    "unit": "MINUTES"
+                }
+            },
+            {
+                "id": 2,
+                "leadId": 1,
+                "description": "",
+                "remindOnly": false,
+                "name": "name",
+                "userId": "userId",
+                "phoneId": "1",
+                "dateTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "beforeReminder": {
+                    "number": 15,
+                    "unit": "MINUTES"
+                }
+            }
+        ]
+
+### Get callback by id [GET /callbacks/{callbackId}]
 
 + Parameters
-    + callbackEventId (optional)
+    + callbackId (required)
 
 
 + Response 200 (application/json)
 
         {
             "id": 1,
-            "dateTime": "2005-08-09T18:31:42",
             "leadId": 1,
-            "groupId": 1,
             "description": "",
             "remindOnly": false,
-            "status": "status",
-            "performerId": "1",
+            "name": "name",
+            "userId": "userId",
             "phoneId": "1",
-            "type": "LeadCallbackAddedEvent"
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES"
+            }
         }
 
-### Add lead callbacks [POST]
+### Add lead callbacks [POST /callbacks]
 
-+ Parameters
-    + callbackEventId (optional)
 
 + Request 200 (application/json)
 
-        {
-            "dateTime": "2005-08-09T18:31:42",
+     {
             "leadId": 1,
-            "groupId": 1,
             "description": "",
             "remindOnly": false,
-            "status": "status",
-            "performerId": "1",
+            "name": "name",
+            "userId": "userId",
             "phoneId": "1",
-            "type": "LeadCallbackAddedEvent"
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES"
+            }
         }
 
 + Response 200 (application/json)
 
         {
             "id": 1,
-            "dateTime": "2005-08-09T18:31:42",
             "leadId": 1,
-            "groupId": 1,
             "description": "",
             "remindOnly": false,
-            "status": "status",
-            "performerId": "1",
+            "name": "name",
+            "userId": "userId",
             "phoneId": "1",
-            "type": "LeadCallbackAddedEvent"
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES"
+            }
         }
 
 
-### Delete lead callbacks [DELETE]
+### Delete lead callbacks [DELETE /callbacks/{callbackId}]
 
 + Parameters
-    + callbackEventId (required)
+    + callbackId (required)
 
 + Response 200 (application/json)
 
