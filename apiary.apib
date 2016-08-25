@@ -665,9 +665,9 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Lead callbacks
+## Lead callbacks [/callbacks]
 
-### Get lead callbacks [GET /callbacks{?leadId}]
+### Get lead callbacks [GET /{?leadId}]
 
 + Parameters
     + leadId (required)
@@ -707,7 +707,7 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-### Get callback by id [GET /callbacks/{callbackId}]
+### Get callback by id [GET /{callbackId}]
 
 + Parameters
     + callbackId (required)
@@ -731,24 +731,24 @@ HOST: http://polls.apiblueprint.org/
             }
         }
 
-### Add lead callbacks [POST /callbacks]
+### Add lead callbacks [POST]
 
 
 + Request 200 (application/json)
 
-     {
-            "leadId": 1,
-            "description": "",
-            "remindOnly": false,
-            "name": "name",
-            "userId": "userId",
-            "phoneId": "1",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES"
-            }
+        {
+                "leadId": 1,
+                "description": "",
+                "remindOnly": false,
+                "name": "name",
+                "userId": "userId",
+                "phoneId": "1",
+                "dateTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "beforeReminder": {
+                    "number": 15,
+                    "unit": "MINUTES"
+                }
         }
 
 + Response 200 (application/json)
@@ -770,7 +770,7 @@ HOST: http://polls.apiblueprint.org/
         }
 
 
-### Delete lead callbacks [DELETE /callbacks/{callbackId}]
+### Delete lead callbacks [DELETE /{callbackId}]
 
 + Parameters
     + callbackId (required)
