@@ -887,6 +887,98 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Lead schemas
 
+## Save order of fields [/fieldOrders]
+
+### Get [GET /{schemaId}]
+
++ Parameters
+    + schemaId (required)
+
++ Response 200 (application/json)
+
+        {
+            "schemaId": 1,
+            "fieldOrders": [
+                {
+                    "fieldId": 1,
+                    "order": 0
+                },
+                {
+                    "fieldId": 2,
+                    "order": 1
+                }
+            ]
+        }
+
+### Save [POST]
+
++ Request (application/json)
+
+        {
+            "schemaId": 1,
+            "fieldOrders": [
+                {
+                    "fieldId": 1,
+                    "order": 0
+                },
+                {
+                    "fieldId": 2,
+                    "order": 1
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "schemaId": 1,
+            "fieldOrders": [
+                {
+                    "fieldId": 1,
+                    "order": 0
+                },
+                {
+                    "fieldId": 2,
+                    "order": 1
+                }
+            ]
+        }
+
+### Update [PUT]
+
++ Request (application/json)
+
+        {
+            "schemaId": 1,
+            "fieldOrders": [
+                {
+                    "fieldId": 1,
+                    "order": 0
+                },
+                {
+                    "fieldId": 2,
+                    "order": 1
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "schemaId": 1,
+            "fieldOrders": [
+                {
+                    "fieldId": 1,
+                    "order": 0
+                },
+                {
+                    "fieldId": 2,
+                    "order": 1
+                }
+            ]
+        }
+
+
 ## Specific lead schema [/leadSchemas/{schemaId}]
 
 ### Get schema [GET]
