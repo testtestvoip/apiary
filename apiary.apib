@@ -28,6 +28,15 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+
+<!-- from lead list 
+
+        {
+            "companyId": "b23fu29f322932",
             "leadIds": [1, 2, 3],
             "name": "Linux users",
             "leadsPerPage": 20,
@@ -39,7 +48,35 @@ HOST: http://polls.apiblueprint.org/
             ],
             "description": "Nerds"
         }
-        
+-->
+<!-- from filter
+
+        {
+            "filterId": 1,
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "description": "Nerds"
+        }
+-->
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "leadSchemaId": 1,
+            "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+      
+<!-- from lead list
 + Response 201 (application/json)
 
         {
@@ -57,24 +94,8 @@ HOST: http://polls.apiblueprint.org/
             "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds",
         }
-
-### Create group from filter id [POST]
-
-+ Request (application/json)
-
-        {
-            "filterId": 1,
-            "name": "Linux users",
-            "leadsPerPage": 20,
-            "fieldVisibility": [
-                {
-                    "1": "VISIBLE",
-                    "2": "INVISIBLE"
-                }
-            ],
-            "description": "Nerds"
-        }
-
+-->  
+<!-- from filter
 + Response 201 (application/json)
 
         {
@@ -91,28 +112,7 @@ HOST: http://polls.apiblueprint.org/
             "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds"
         }
-
-### Create group [POST]
-
-+ Request (application/json)
-
-        {
-            "companyId": "b23fu29f322932",
-            "name": "Linux users",
-            "leadsPerPage": 20,
-            "description": "Nerds"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "id": 1,
-            "leadSchemaId": 1,
-            "companyId": "b23fu29f322932",
-            "name": "Linux users",
-            "leadsPerPage": 20,
-            "description": "Nerds"
-        }
+ --> 
 
 ## Specific group [/groups/{groupId}]
 
