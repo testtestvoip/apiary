@@ -22,7 +22,7 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-### Create group from lead list [POST]
+### Create group [POST]
 
 + Request (application/json)
 
@@ -33,7 +33,7 @@ HOST: http://polls.apiblueprint.org/
             "description": "Nerds"
         }
 
-<!-- from lead list 
++ Request (application/json)
 
         {
             "companyId": "b23fu29f322932",
@@ -48,8 +48,9 @@ HOST: http://polls.apiblueprint.org/
             ],
             "description": "Nerds"
         }
--->
-<!-- from filter
+        
+        
++ Request (application/json)
 
         {
             "filterId": 1,
@@ -63,8 +64,7 @@ HOST: http://polls.apiblueprint.org/
             ],
             "description": "Nerds"
         }
--->
-
+        
 + Response 201 (application/json)
 
         {
@@ -76,7 +76,7 @@ HOST: http://polls.apiblueprint.org/
             "description": "Nerds"
         }
       
-<!-- from lead list
+
 + Response 201 (application/json)
 
         {
@@ -94,8 +94,8 @@ HOST: http://polls.apiblueprint.org/
             "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds",
         }
--->  
-<!-- from filter
+       
+
 + Response 201 (application/json)
 
         {
@@ -112,7 +112,7 @@ HOST: http://polls.apiblueprint.org/
             "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds"
         }
- --> 
+
 
 ## Specific group [/groups/{groupId}]
 
