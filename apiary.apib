@@ -22,12 +22,12 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-### Create group [POST]
+### Create group from lead list [POST]
 
 + Request (application/json)
 
         {
-            "filterId": 1,
+            "companyId": "b23fu29f322932",
             "leadIds": [1, 2, 3],
             "name": "Linux users",
             "leadsPerPage": 20,
@@ -43,9 +43,8 @@ HOST: http://polls.apiblueprint.org/
 + Response 201 (application/json)
 
         {
-            "companyId": "abc",
-            "schemaId": 1,
-            "filterId": 1,
+            "id": 1,
+            "companyId": "b23fu29f322932",
             "leadIds": [1, 2, 3],
             "name": "Linux users",
             "leadsPerPage": 20,
@@ -55,11 +54,66 @@ HOST: http://polls.apiblueprint.org/
                     "2": "INVISIBLE"
                 }
             ],
+            "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds",
-            "cloneLeadOnCustomerCreation": false,
-            "defaultGroup": false
         }
-        
+
+### Create group from filter id [POST]
+
++ Request (application/json)
+
+        {
+            "filterId": 1,
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "description": "Nerds"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "filterId": 1,
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "fieldVisibility": [
+                {
+                    "1": "VISIBLE",
+                    "2": "INVISIBLE"
+                }
+            ],
+            "lastUpdateDateTime": "2005-08-09T18:31:42.201",
+            "description": "Nerds"
+        }
+
+### Create group [POST]
+
++ Request (application/json)
+
+        {
+            "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "leadSchemaId": 1,
+            "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+
 ## Specific group [/groups/{groupId}]
 
 ### Get group by id [GET]
