@@ -1675,9 +1675,9 @@ HOST: http://polls.apiblueprint.org/
             "active": true
         }
 
-# Group Reports
+# Group History
 
-## Lead call history [/reports/leads/{id}/calls]
+## Lead call history [/history/leads/{id}/calls]
 
 ### Get lead call history [GET]
 
@@ -1698,3 +1698,26 @@ HOST: http://polls.apiblueprint.org/
                 "callId": "abc123"
             }
         ]
+        
+## Company call records history [/history/callRecords]
+
+### Get call record history [GET]
+
++ Parameters
+    + id (required)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "abc123",
+                "date": "2005-08-09T18:31:42",
+                "duration": 60,
+                "userName": "Kolya"
+                "clientName": "Vasya",
+                "clientPhone": "+180..",
+                "callId": "abc123"
+            }
+        ]
+
+# Group Reports
