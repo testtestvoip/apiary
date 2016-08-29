@@ -3,6 +3,60 @@ HOST: http://polls.apiblueprint.org/
 
 # VoipTime Api
 
+
+# Group Lead sources
+
+## Sources [/sources]
+
+### Get sources by group id [GET /{?groupId}]
+
++ Response 201 (application/json)
+        
+        [
+            {
+                "id": 1,
+                "name": "fsfwefw234g455h67ytg",
+                "groupId": 1,
+                "active": true
+            }
+        ]
+
+### Get source [GET /{sourceId}]
+
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "name": "fsfwefw234g455h67ytg",
+            "groupId": 1,
+            "active": true
+        }
+    
+
+### Create source [POST]
+
++ Request (application/json)
+
+        {
+            "name": "fsfwefw234g455h67ytg",
+            "groupId": 1,
+            "active": true
+        }
+        
+        
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "name": "fsfwefw234g455h67ytg",
+            "groupId": 1,
+            "active": true
+        }
+        
+### Delete source [DELETE /{sourceId}]
+
++ Response 200 (application/json)
+
 # Group Security
 
 ## Login [/login]
@@ -183,7 +237,8 @@ HOST: http://polls.apiblueprint.org/
                     "green": 0,
                     "blue": 164
                 },
-                "order": 1,
+                "active": true,
+                "default": true,
                 "groupId": 1
             }
         ]
@@ -200,9 +255,9 @@ HOST: http://polls.apiblueprint.org/
                 "green": 255,
                 "blue": 255
             },
-            "order": 2,
+            "active": true,
+            "default": true,
             "groupId": 1
-            
         }
 
 + Response 200 (application/json)
@@ -216,9 +271,9 @@ HOST: http://polls.apiblueprint.org/
                 "green": 255,
                 "blue": 255
             },
-            "order": 2,
-            "groupId": 1
-            
+            "groupId": 1,
+            "active": true,
+            "default": true
         }
         
 ### Update lead statuses [PUT]
@@ -234,8 +289,9 @@ HOST: http://polls.apiblueprint.org/
                 "green": 255,
                 "blue": 255
             },
-            "order": 2,
-            "groupId": 1
+            "groupId": 1,
+            "active": true,
+            "default": true
             
         }
 
@@ -250,7 +306,8 @@ HOST: http://polls.apiblueprint.org/
                 "green": 255,
                 "blue": 255
             },
-            "order": 2,
+            "active": true,
+            "default": true,
             "groupId": 1
             
         }
@@ -1755,24 +1812,6 @@ HOST: http://polls.apiblueprint.org/
                     "dynamic": "false"
                 }
             ]
-        }
-
-# Group Lead sources
-
-## Lead source operations [/sources/{id}]
-
-### Get lead source [GET]
-
-+ Parameters
-    + id (required)
-
-+ Response 200 (application/json)
-
-        {
-            "id": 1,
-            "name": "Google",
-            "groupId": 1,
-            "active": true
         }
 
 # Group History
