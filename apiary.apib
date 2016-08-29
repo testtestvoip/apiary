@@ -164,10 +164,11 @@ HOST: http://polls.apiblueprint.org/
 
 ## Group's lead statuses [/groups/{groupId}/leadStatuses]
 
-### GET
-
 + Parameters
     + groupId (required)
+
+
+### Get lead statues [GET]
 
 + Response 200 (application/json)
 
@@ -186,6 +187,39 @@ HOST: http://polls.apiblueprint.org/
                 "groupId": 1
             }
         ]
+
+### Create lead statuses [POST]
+
++ Request (application/json)
+
+        {
+            "name": "name",
+            "description": "fdsdescription",
+            "color": {
+                "red": 255,
+                "green": 255,
+                "blue": 255
+            },
+            "order": 2,
+            "groupId": 1
+            
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 10
+            "name": "name",
+            "description": "fdsdescription",
+            "color": {
+                "red": 255,
+                "green": 255,
+                "blue": 255
+            },
+            "order": 2,
+            "groupId": 1
+            
+        }
 
 # Group Leads
 
