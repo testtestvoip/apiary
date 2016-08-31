@@ -66,6 +66,25 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
+## Lead tracking [/trackedleads]
+
+### Enable tracking [POST]
+
++ Request (application/json)
+
+        [
+            {
+                "leadId": 1,
+                "companyId": "b23fu29f322932"
+            }
+        ]
+
+### Disable tracking [DELETE /trackedleads?{?leadId}]
+
++ Parameters
+    leadId (required)
+
+
 # Group Lead sources
 
 ## Sources [/sources]
