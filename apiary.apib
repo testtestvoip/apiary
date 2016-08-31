@@ -12,7 +12,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 201 (application/json)
         
-        [
+        [he
             {
                 "id": 1,
                 "name": "fsfwefw234g455h67ytg",
@@ -87,7 +87,7 @@ HOST: http://polls.apiblueprint.org/
             {
                 "id": 1,
                 "name": "Leads group",
-                "description": "Description",
+                "demaription": "Description",
                 "contacts": 7,
                 "schemaId": 23,
                 "virtual": false
@@ -1044,9 +1044,9 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Lead schemas
 
-## Order of fields [/fieldOrders]
+## Order of fields [/fieldOrders/{schemaId}]
 
-### Get [GET /fieldOrders/{schemaId}]
+### Get [GET]
 
 + Parameters
     + schemaId (required)
@@ -1136,9 +1136,9 @@ HOST: http://polls.apiblueprint.org/
         }
 
 
-## Specific lead schema [/leadSchemas/{schemaId}]
+## Specific lead schema [/leadSchemas]
 
-### Get schema [GET]
+### Get schema [GET /{schemaId}]
 
 + Parameters
     + schemaId (required)
@@ -1216,7 +1216,7 @@ HOST: http://polls.apiblueprint.org/
             "defaultLeadStatusId": 1
         }
         
-### Update schema [PUT]
+### Update schema [PUT /{schemaId}]
 
 + Parameters
     + schemaId (required)
@@ -1362,8 +1362,6 @@ HOST: http://polls.apiblueprint.org/
 
 ### Create schema [POST]
 
-+ Parameters
-    + schemaId (required)
 
 + Request 200 (application/json)
 
