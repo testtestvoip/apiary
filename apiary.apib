@@ -28,7 +28,14 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-            "provider": "GMAIL | MS_EXCHANGE"
+            "accessToken": "accessToken",
+            "refreshToken": "refreshToken",
+            "mailboxUsername": "mailboxUsername",
+            "provider": "GMAIL | MS_EXCHANGE",
+            "folders": {
+                "id": "fdsfdsfdsfdsfssdfsdfsfd",
+                "name": "fsfwefw234g455h67ytg"
+            }
         }
         
 + Response 201 (application/json)
@@ -55,7 +62,7 @@ HOST: http://polls.apiblueprint.org/
         [
             {
                 "id": "fdsfdsfdsfdsfssdfsdfsfd",
-                "name": "fsfwefw234g455h67ytg",
+                "name": "fsfwefw234g455h67ytg"
             }
         ]
 
