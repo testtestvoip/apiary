@@ -6,9 +6,24 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Email
 
-## Mailbox registrations
+## Mailbox registrations [/mailboxes/registrations]
 
-### Create registrations [POST /mailboxes/registrations]
+### Create registrations [POST]
+
++ Request (application/json)
+
+        {
+            "provider": "GMAIL | MS_EXCHANGE"
+        }
+        
++ Response 201 (application/json)
+        
+        {
+            "id": "57c67501a2e66615b6eeaad2",
+            "provider": "GMAIL | MS_EXCHANGE"
+        }
+        
+### Create registrations [PUT]
 
 + Request (application/json)
 
@@ -23,13 +38,26 @@ HOST: http://polls.apiblueprint.org/
             "provider": "GMAIL | MS_EXCHANGE"
         }
 
-### Get authorization url [GET /mailboxes/registrations/url]
+### Get authorization url [GET /url]
 
 + Response 201 (application/json)
         
         {
             "authorizationUrl": "https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=136843422360-i1kpsavb4b85n9t38v7forae88c6eli2.apps.googleusercontent.com&redirect_uri=http://localhost:8080/mailboxes/authorizations&response_type=code&scope=https://mail.google.com/%20https://www.googleapis.com/auth/userinfo.email"
         }
+
+## Folders [/mailboxes/folders]
+
+### Get folder list [GET]
+
++ Response 201 (application/json)
+        
+        [
+            {
+                "id": "fdsfdsfdsfdsfssdfsdfsfd",
+                "name": "fsfwefw234g455h67ytg",
+            }
+        ]
 
 # Group Lead sources
 
