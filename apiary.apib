@@ -89,6 +89,48 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200
 
+
+## Emails [/emails]
+
+### Hide message [DELETE /{id}]
+
++ Parameters 
+    + id (required)
+    
+    
++ Response 200
+
+### Get lead messages [GET /{?leadId}&{?offset}&{?limit}]
+
++ Parameters
+    + leadId (required)
+    + offset (optional)
+    + limit (optional)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "klasd87sa",
+                "companyMessageId": {
+                    "messageId": {
+                        "uid": "lkjasd9",
+                        "folderName": "abc",
+                        "mailboxUsername": "smith@voiptime.net"
+                    },
+                    "companyId": "asd098sd"
+                },
+                "text": "abcd",
+                "subject": "subj",
+                "sentDate": "2005-08-09T18:31:42",
+                "recipients": [
+                    "smithagain@voiptime.net"
+                ],
+                "sender": "newsmith@voiptime.net"
+            }
+        ]
+
+
 # Group Lead sources
 
 ## Sources [/sources]
