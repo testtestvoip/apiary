@@ -4,6 +4,28 @@ HOST: http://polls.apiblueprint.org/
 # VoipTime Api
 
 
+# Group Email
+
+## Mailbox registrations [/mailboxes/registrations]
+
+### Create registrations [GET]
+
++ Request (application/json)
+
+        {
+            "userId": "22",
+            "provider": "GMAIL | MS_EXCHANGE"
+        }
+        
++ Response 201 (application/json)
+        
+        {
+            "id": "57c67501a2e66615b6eeaad2",
+            "userId": "22",
+            "provider": "GMAIL | MS_EXCHANGE"
+        }
+
+
 # Group Lead sources
 
 ## Sources [/sources]
