@@ -15,14 +15,14 @@ HOST: http://polls.apiblueprint.org/
         {
             "provider": "GMAIL | MS_EXCHANGE"
         }
-        
+
 + Response 201 (application/json)
-        
+
         {
             "id": "57c67501a2e66615b6eeaad2",
             "provider": "GMAIL | MS_EXCHANGE"
         }
-        
+
 ### Create registrations [PUT]
 
 + Request (application/json)
@@ -37,9 +37,9 @@ HOST: http://polls.apiblueprint.org/
                 "name": "fsfwefw234g455h67ytg"
             }
         }
-        
+
 + Response 201 (application/json)
-        
+
         {
             "id": "57c67501a2e66615b6eeaad2",
             "provider": "GMAIL | MS_EXCHANGE"
@@ -48,7 +48,7 @@ HOST: http://polls.apiblueprint.org/
 ### Get authorization url [GET /mailboxes/registrations/url]
 
 + Response 201 (application/json)
-        
+
         {
             "authorizationUrl": "https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=136843422360-i1kpsavb4b85n9t38v7forae88c6eli2.apps.googleusercontent.com&redirect_uri=http://localhost:8080/mailboxes/authorizations&response_type=code&scope=https://mail.google.com/%20https://www.googleapis.com/auth/userinfo.email"
         }
@@ -58,7 +58,7 @@ HOST: http://polls.apiblueprint.org/
 ### Get folder list [GET]
 
 + Response 201 (application/json)
-        
+
         [
             {
                 "id": "fdsfdsfdsfdsfssdfsdfsfd",
@@ -85,6 +85,46 @@ HOST: http://polls.apiblueprint.org/
     leadId (required)
 
 
+## Unknown email addresses and untracked leads [/unknownaddresses]
+
+### Get unknown email addresses and untracked leads [GET /unknownaddresses{?offset}{?limit}]
+
++ Response 200 (application/json)
+
+    [
+      {
+        "totalNumber": 2,
+        "unknownEmailAddresses": [
+          {
+            "id": "abcd",
+            "email": "smith@voiptime.net",
+            "userId": "lkjsd8"
+          },
+          {
+            "id": "bbcd",
+            "leadId": 1
+          }
+        ]
+      }
+    ]
+
+### Get number of unknown addresses [GET /unknownaddresses?metaonly=true]
+
++ Response 200 (application/json)
+
+    [
+      {
+        "totalNumber": 2
+      }
+    ]
+
+### Hide a couple of unknown addresses [DELETE /unknownaddresses{?ids}]
+
++ Parameters
+  + ids (required)
+
++ Response 200
+
 # Group Lead sources
 
 ## Sources [/sources]
@@ -92,7 +132,7 @@ HOST: http://polls.apiblueprint.org/
 ### Get sources by group id [GET /{?groupId}]
 
 + Response 201 (application/json)
-        
+
         [
             {
                 "id": 1,
@@ -112,7 +152,7 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 1,
             "active": true
         }
-    
+
 
 ### Create source [POST]
 
@@ -123,8 +163,8 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 1,
             "active": true
         }
-        
-        
+
+
 + Response 201 (application/json)
 
         {
@@ -133,7 +173,7 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 1,
             "active": true
         }
-        
+
 ### Delete source [DELETE /{sourceId}]
 
 + Response 200 (application/json)
@@ -161,7 +201,7 @@ HOST: http://polls.apiblueprint.org/
 ## All groups [/groups]
 
 ### Find all group of company [GET]
-    
+
 + Response 200 (application/json)
 
         [
@@ -202,8 +242,8 @@ HOST: http://polls.apiblueprint.org/
             ],
             "description": "Nerds"
         }
-        
-        
+
+
 + Request (application/json)
 
         {
@@ -218,7 +258,7 @@ HOST: http://polls.apiblueprint.org/
             ],
             "description": "Nerds"
         }
-        
+
 + Response 201 (application/json)
 
         {
@@ -229,7 +269,7 @@ HOST: http://polls.apiblueprint.org/
             "leadsPerPage": 20,
             "description": "Nerds"
         }
-      
+
 
 + Response 201 (application/json)
 
@@ -248,7 +288,7 @@ HOST: http://polls.apiblueprint.org/
             "lastUpdateDateTime": "2005-08-09T18:31:42.201",
             "description": "Nerds",
         }
-       
+
 
 + Response 201 (application/json)
 
@@ -274,7 +314,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Parameters
     + groupId (required)
-    
+
 + Response 200 (application/json)
 
         {
@@ -356,7 +396,7 @@ HOST: http://polls.apiblueprint.org/
             "active": true,
             "default": true
         }
-        
+
 ### Update lead statuses [PUT]
 
 + Request (application/json)
@@ -373,7 +413,7 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 1,
             "active": true,
             "default": true
-            
+
         }
 
 + Response 200 (application/json)
@@ -390,7 +430,7 @@ HOST: http://polls.apiblueprint.org/
             "active": true,
             "default": true,
             "groupId": 1
-            
+
         }
 
 # Group Leads
@@ -404,7 +444,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Parameters
     + attachmentId (required)
-    + leadId (required)    
+    + leadId (required)
 
 + Response 200 (application/json)
 
@@ -447,7 +487,7 @@ HOST: http://polls.apiblueprint.org/
 
 ## Filter leads [/leads/{?filterId}{?limit}{?offset}]
 
-### GET 
+### GET
 
 + Parameters
     + filterId (number, required)
@@ -735,7 +775,7 @@ HOST: http://polls.apiblueprint.org/
             ],
             "sourceId": 1
         }
-        
+
 + Response 200 (application/json)
 
         {
@@ -813,7 +853,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Parameters
     + leadId (required)
-    
+
 + Response 200 (application/json)
 
         {
@@ -1065,7 +1105,7 @@ HOST: http://polls.apiblueprint.org/
                 "name": "Owner",
                 "description": "description",
                 "permissions": [
-                    "57695b7a82f82e0001079bb4", 
+                    "57695b7a82f82e0001079bb4",
                     "57695b7a82f82e0001079bb4",
                     "57695b7a82f82e0001079bb4",
                     "57695b7a82f82e0001079bb4",
@@ -1296,7 +1336,7 @@ HOST: http://polls.apiblueprint.org/
             },
             "defaultLeadStatusId": 1
         }
-        
+
 ### Update schema [PUT /{schemaId}]
 
 + Parameters
@@ -2060,7 +2100,7 @@ HOST: http://polls.apiblueprint.org/
                 "callId": "abc123"
             }
         ]
-        
+
 ## Company call records history [/history/callRecords]
 
 ### Get call record history [GET]
