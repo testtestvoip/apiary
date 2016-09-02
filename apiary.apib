@@ -45,7 +45,7 @@ HOST: http://polls.apiblueprint.org/
             "provider": "GMAIL | MS_EXCHANGE"
         }
 
-### Get authorization url [GET /mailboxes/registrations/url]
+### Get authorization url [GET /mailboxes/authorizations/url]
 
 + Response 201 (application/json)
 
@@ -78,14 +78,14 @@ HOST: http://polls.apiblueprint.org/
                 "companyId": "b23fu29f322932"
             }
         ]
-        
+
 + Response 201
 
 ### Disable tracking [DELETE /trackedleads?{?leadId}]
 
 + Parameters
     + leadId (required)
-    
+
 
 + Response 200
 
@@ -94,10 +94,10 @@ HOST: http://polls.apiblueprint.org/
 
 ### Hide message [DELETE /{id}]
 
-+ Parameters 
++ Parameters
     + id (required)
-    
-    
+
+
 + Response 200
 
 ### Get lead messages [GET /{?leadId}{?offset}{?limit}]
@@ -106,7 +106,7 @@ HOST: http://polls.apiblueprint.org/
     + leadId (required)
     + offset (optional)
     + limit (optional)
-    
+
 + Response 200 (application/json)
 
         [
