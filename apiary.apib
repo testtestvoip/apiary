@@ -57,16 +57,18 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-    {
-      "mailboxUsername": "smith@voiptime.net",
-      "userId": "askdjh2",
-      "companyId": "asd098asd",
-      "provider": "MS_EXCHANGE | GMAIL",
-      "folders": [
-        "id": "lkjasdas098",
-        "name": "INBOX"
-      ]
-    }
+        {
+            "mailboxUsername": "smith@voiptime.net",
+            "userId": "askdjh2",
+            "companyId": "asd098asd",
+            "provider": "MS_EXCHANGE | GMAIL",
+            "folders": [
+                {
+                    "id": "lkjasdas098",
+                    "name": "INBOX"
+                }
+            ]
+        }
 
 + Response 404
 
@@ -154,32 +156,32 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-    [
-      {
-        "totalNumber": 2,
-        "unknownEmailAddresses": [
-          {
-            "id": "abcd",
-            "email": "smith@voiptime.net",
-            "userId": "lkjsd8"
-          },
-          {
-            "id": "bbcd",
-            "leadId": 1
-          }
+        [
+            {
+                "totalNumber": 2,
+                "unknownEmailAddresses": [
+                {
+                    "id": "abcd",
+                    "email": "smith@voiptime.net",
+                    "userId": "lkjsd8"
+                },
+                {
+                    "id": "bbcd",
+                    "leadId": 1
+                }
+                ]
+            }
         ]
-      }
-    ]
 
 ### Get number of unknown addresses [GET /unknownaddresses?metaonly=true]
 
 + Response 200 (application/json)
 
-    [
-      {
-        "totalNumber": 2
-      }
-    ]
+        [
+            {
+                "totalNumber": 2
+            }
+        ]
 
 ### Hide a couple of unknown addresses [DELETE /unknownaddresses{?ids}]
 
