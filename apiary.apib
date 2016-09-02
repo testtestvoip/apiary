@@ -53,6 +53,21 @@ HOST: http://polls.apiblueprint.org/
             "authorizationUrl": "https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=136843422360-i1kpsavb4b85n9t38v7forae88c6eli2.apps.googleusercontent.com&redirect_uri=http://localhost:8080/mailboxes/authorizations&response_type=code&scope=https://mail.google.com/%20https://www.googleapis.com/auth/userinfo.email"
         }
 
+### Get logged in user's registrations [GET /mailboxes/registrations]
+
++ Response 200 (application/json)
+
+    {
+      "mailboxUsername": "smith@voiptime.net",
+      "userId": "askdjh2",
+      "companyId": "asd098asd",
+      "provider": "MS_EXCHANGE | GMAIL",
+      "folders": [
+        "id": "lkjasdas098",
+        "name": "INBOX"
+      ]
+    }
+
 ## Folders [/mailboxes/folders]
 
 ### Get folder list [GET]
