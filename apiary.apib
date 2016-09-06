@@ -154,11 +154,13 @@ HOST: http://polls.apiblueprint.org/
 
 ### Get unknown email addresses and untracked leads [GET /unknownaddresses{?offset}{?limit}]
 
++ Parameters
+    + offset (optional)
+    + limit (optional)
+
 + Response 200 (application/json)
 
-        {
-            "totalNumber": 2,
-            "unknownEmailAddresses": [
+        [
             {
                 "id": "abcd",
                 "email": "smith@voiptime.net",
@@ -169,8 +171,7 @@ HOST: http://polls.apiblueprint.org/
                 "email": "smith@voiptime.net",
                 "leadId": 1
             }
-            ]
-        }
+        ]
 
 ### Get number of unknown addresses [GET /unknownaddresses/tootalNumber]
 
