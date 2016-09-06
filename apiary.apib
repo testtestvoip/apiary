@@ -156,23 +156,21 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-        [
+        {
+            "totalNumber": 2,
+            "unknownEmailAddresses": [
             {
-                "totalNumber": 2,
-                "unknownEmailAddresses": [
-                {
-                    "id": "abcd",
-                    "email": "smith@voiptime.net",
-                    "userId": "lkjsd8"
-                },
-                {
-                    "id": "bbcd",
-                    "email": "smith@voiptime.net",
-                    "leadId": 1
-                }
-                ]
+                "id": "abcd",
+                "email": "smith@voiptime.net",
+                "userId": "lkjsd8"
+            },
+            {
+                "id": "bbcd",
+                "email": "smith@voiptime.net",
+                "leadId": 1
             }
-        ]
+            ]
+        }
 
 ### Get number of unknown addresses [GET /unknownaddresses?metaonly=true]
 
