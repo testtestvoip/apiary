@@ -3,6 +3,273 @@ HOST: http://polls.apiblueprint.org/
 
 # VoipTime Api
 
+# Group Telephony
+
+## Gateway [/gateway]
+
+### Get gateway by id [GET /{id}]
+
++ Parameters
+    + id (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": true,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+
+### Get gateway by company id [GET /{?companyId}]
+
++ Parameters
+    + companyId (required)
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": true,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+
+### Create gateway [POST]
+
++ Request (application/json)
+
+        {
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "enabledCallRecording": true
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": true,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+        
+### Update gateway [PUT /{id}]
+
++ Parameters
+    + id (required)
+
++ Request (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": true,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": true,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+
+### Patch gateway [PATCH /{id}]
+
++ Parameters
+    + id (required)
+
++ Request (application/json)
+
+        {
+            "enabled": false
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": false,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": true,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
+
+### Delete gateway [DELETE /{id}]
+
++ Parameters
+    + id (required)
+
++ Request (application/json)
+
+        {
+            "enabled": false
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "id1",
+            "companyId": "57c67501a2e66615b6eeaad2",
+            "name": "name",
+            "username": "vasya",
+            "password": "password",
+            "realm": "realm",
+            "fromUser": "from user",
+            "proxy": "proxy",
+            "sipPort": 8086,
+            "fromDomain": "fromDomain",
+            "expireSeconds": 5,
+            "register": false,
+            "inboundCodecPrefs": ["V8"],
+            "outboundCodecPrefs": ["V8"],
+            "dtmfType": "",
+            "registerTransport": ["TCP"],
+            "connected": true,
+            "ping": 5,
+            "enabled": false,
+            "error": {
+                "message": "error",
+                "code": "3knmdns"
+            },
+            "enabledCallRecording": true
+        }
 
 # Group Email
 
