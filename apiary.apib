@@ -3,6 +3,44 @@ HOST: http://polls.apiblueprint.org/
 
 # VoipTime Api
 
+# Group Notification
+
+## Notification 
+
+### Get notifications [GET /users/{userId}/notifications{?viewed}]
+
++ Parameters
+    + userId (required)
+    + viewed (optional)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "viewed": false,
+                "event": {
+                    "type": "",
+                    "context": {
+                    }
+                }
+            }
+        ]
+        
+        
+### Mark notification as viewed [PUT /users/{userId}/notifications]
+
++ Parameters
+    + userId (required)
+    + viewed (optional)
+    
++ Request 200 (application/json)
+
+        {
+            "userId": "dsfsf32t3fe3f32f322d321d32"
+        }
+
++ Response 200 (application/json)
+
 # Group Telephony
 
 ## Gateway [/gateway]
