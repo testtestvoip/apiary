@@ -718,6 +718,32 @@ HOST: http://polls.apiblueprint.org/
             "defaultGroup": false
         }
 
+
+### Update group with id [PUT]
+
++ Parameters
+    + groupId (required)
+
++ Request 200 (application/json)
+
+        {
+            "leadSchemaId": 1,
+            "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "leadSchemaId": 1,
+            "companyId": "b23fu29f322932",
+            "name": "Linux users",
+            "leadsPerPage": 20,
+            "description": "Nerds"
+        }
+
 ## Group's lead statuses [/groups/{groupId}/leadStatuses]
 
 + Parameters
