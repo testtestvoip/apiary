@@ -27,17 +27,18 @@ HOST: http://polls.apiblueprint.org/
         ]
         
         
-### Mark notification as viewed [PUT /users/{userId}/notifications]
+### Mark notification as viewed [DELETE /notifications]
 
-+ Parameters
-    + userId (required)
-    + viewed (optional)
-    
 + Request 200 (application/json)
 
-        {
-            "userId": "dsfsf32t3fe3f32f322d321d32"
-        }
++ Response 200 (application/json)
+
+### Mark notification as viewed [DELETE /notifications/{notificationId}]
+
++ Parameters
+    + notificationId (required)
+    
++ Request 200 (application/json)
 
 + Response 200 (application/json)
 
