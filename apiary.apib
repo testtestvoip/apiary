@@ -7,7 +7,7 @@ HOST: http://polls.apiblueprint.org/
 
 ## Notification 
 
-### Get notifications [GET /users/{userId}/notifications{?viewed}]
+### Get notifications [GET /notifications{?viewed}]
 
 + Parameters
     + userId (required)
@@ -27,13 +27,13 @@ HOST: http://polls.apiblueprint.org/
         ]
         
         
-### Mark notification as viewed [DELETE /notifications]
+### Mark notification all as viewed [DELETE /notifications]
 
 + Request 200 (application/json)
 
 + Response 200 (application/json)
 
-### Mark notification as viewed [DELETE /notifications/{notificationId}]
+### Mark particular notification as viewed [DELETE /notifications/{notificationId}]
 
 + Parameters
     + notificationId (required)
