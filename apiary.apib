@@ -2516,3 +2516,123 @@ HOST: http://polls.apiblueprint.org/
         ]
 
 # Group Reports
+
+# Group Marketplace
+
+## Services
+
+### Get all services [GET /services{?active}]
+
++ Parameters
+    + active (optional, boolean)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "abc123",
+                "name": "Lead Management System",
+                "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
+                "ref": "https://voiptimecloud.com/lead-management-system",
+                "available": true
+            }
+        ]
+        
+### Get service plans [GET /plans{?serviceId}]
+
++ Parameters
+    + serviceId (required)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "abc123",
+                "serviceId": "abc123",
+                "type": "Trial",
+                "trial": {
+                    "daysAvailable": 90
+                },
+                "price": 0.0,
+                "features": [
+                    "Unlimited  leads, calls, deals and tasks",
+                    "Custom fields and filters"
+                ],
+                "monthLimit": 3,
+                "renewal": false,
+                "active": false
+            },
+            {
+                "id": "abc124",
+                "serviceId": "abc132"
+                "type": "Standard",
+                "price": 20.0,
+                "features": [
+                    "Unlimited  leads, calls, deals and tasks",
+                    "Custom fields and filters"
+                ],
+                "monthLimit": 1,
+                "renewal": true,
+                "active": false
+            }
+        ]
+        
+### Activate service plan [PATCH /plans/{id}]
+
++ Parameters
+    + id (required)
+    
++ Request (application/json)
+
+        {
+            "active": "true"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": "abc124",
+            "serviceId": "abc132"
+            "type": "Standard",
+            "price": 20.0,
+            "features": [
+                "Unlimited  leads, calls, deals and tasks",
+                "Custom fields and filters"
+            ],
+            "monthLimit": 1,
+            "active": true,
+            "activation": {
+                "purchaseDate": "2005-08-09T18:31:42",
+                "expirationDate": "2005-08-16T18:31:42",
+                "daysLeft": 7,
+                "userId": "abc123"
+            }
+        }
+        
+### Get all activated service plans [GET /plans{?active}]
+
++ Parameters
+    + active (optional)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "abc124",
+                "serviceId": "abc132"
+                "type": "Standard",
+                "price": 20.0,
+                "features": [
+                    "Unlimited  leads, calls, deals and tasks",
+                    "Custom fields and filters"
+                ],
+                "monthLimit": 1,
+                "active": true,
+                "activation": {
+                    "purchaseDate": "2005-08-09T18:31:42",
+                    "expirationDate": "2005-08-16T18:31:42",
+                    "daysLeft": 7,
+                    "userId": "abc123"
+                }
+            }
+        ]
