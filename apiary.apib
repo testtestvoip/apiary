@@ -2548,7 +2548,7 @@ HOST: http://polls.apiblueprint.org/
 
 ## Services
 
-### Get all services [GET /services{?active}]
+### Get just active services for current company [GET /services{?active}]
 
 + Parameters
     + active (optional, boolean)
@@ -2558,6 +2558,30 @@ HOST: http://polls.apiblueprint.org/
         [
             {
                 "id": "abc123",
+                "name": "Lead Management System",
+                "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
+                "ref": "https://voiptimecloud.com/lead-management-system",
+                "available": true
+            }
+        ]
+        
+### Get all services [GET /services]
+
++ Parameters
+    + active (optional, boolean)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "abc123",
+                "name": "Lead Management System",
+                "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
+                "ref": "https://voiptimecloud.com/lead-management-system",
+                "available": true
+            },
+            {
+                "id": "abc456",
                 "name": "Lead Management System",
                 "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
                 "ref": "https://voiptimecloud.com/lead-management-system",
@@ -2577,9 +2601,6 @@ HOST: http://polls.apiblueprint.org/
                 "id": "abc123",
                 "serviceId": "abc123",
                 "type": "Trial",
-                "trial": {
-                    "daysAvailable": 90
-                },
                 "price": {
                     "usd": 0,
                     "cents": 0
@@ -2590,7 +2611,7 @@ HOST: http://polls.apiblueprint.org/
                 ],
                 "monthLimit": 3,
                 "renewal": false,
-                "active": false
+                "active": true
             },
             {
                 "id": "abc124",
@@ -2607,58 +2628,13 @@ HOST: http://polls.apiblueprint.org/
                 "monthLimit": 1,
                 "renewal": true,
                 "active": false
-            }
-        ]
-        
-### Activate service plan [PATCH /plans/{id}]
-
-+ Parameters
-    + id (required)
-    
-+ Request (application/json)
-
-        {
-            "active": "true"
-        }
-        
-+ Response 200 (application/json)
-
-        {
-            "id": "abc124",
-            "serviceId": "abc132"
-            "type": "Standard",
-            "price": {
-                    "usd": 20,
-                    "cents": 0
             },
-            "features": [
-                "Unlimited  leads, calls, deals and tasks",
-                "Custom fields and filters"
-            ],
-            "monthLimit": 1,
-            "active": true,
-            "activation": {
-                "purchaseDate": "2005-08-09T18:31:42",
-                "expirationDate": "2005-08-16T18:31:42",
-                "daysLeft": 7,
-                "userId": "abc123"
-            }
-        }
-        
-### Get all activated service plans [GET /plans{?active}]
-
-+ Parameters
-    + active (optional)
-    
-+ Response 200 (application/json)
-
-        [
             {
-                "id": "abc124",
+                "id": "abc125",
                 "serviceId": "abc132"
-                "type": "Standard",
+                "type": "Professional",
                 "price": {
-                    "usd": 20,
+                    "usd": 59,
                     "cents": 0
                 },
                 "features": [
@@ -2666,12 +2642,59 @@ HOST: http://polls.apiblueprint.org/
                     "Custom fields and filters"
                 ],
                 "monthLimit": 1,
-                "active": true,
-                "activation": {
+                "renewal": true,
+                "active": false
+            }
+        ]
+        
+## Subscriptions [/subscriptions{?tariffPlanId}]
+
++ Parameters
+    + tariffPlanId (required)
+
+### Activate tariff plan [POST]
+    
++ Request (application/json)
+
+        {
+            "serviceId": "abc132",
+            "purchaseDate": "2005-08-09T18:31:42",
+            "expirationDate": "2005-08-16T18:31:42",
+            "daysLeft": 7,
+            "tariffPlanId": "abc123",
+            "active": "true"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": "1234",
+            "serviceId": "abc132",
+            "purchaseDate": "2005-08-09T18:31:42",
+            "expirationDate": "2005-08-16T18:31:42",
+            "daysLeft": 7,
+            "tariffPlanId": "abc123",
+            "active": "true"
+        }
+        
+### Get tariff plan subscription history [GET]
+
+        
++ Response 200 (application/json)
+
+        [
+                {
+                    "id": "1234",
+                    "serviceId": "abc132",
                     "purchaseDate": "2005-08-09T18:31:42",
                     "expirationDate": "2005-08-16T18:31:42",
                     "daysLeft": 7,
-                    "userId": "abc123"
+                    "tariffPlanId": "abc123",
+                    "active": "true"
                 }
-            }
         ]
+        
+### Deactivate tariff plan [DELETE]
+    
+        
++ Response 200 (application/json)
