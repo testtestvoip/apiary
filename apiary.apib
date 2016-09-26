@@ -747,11 +747,10 @@ HOST: http://polls.apiblueprint.org/
 
 ## Group's lead statuses [/groups/{groupId}/leadStatuses]
 
+### Get lead statues [GET /groups/{groupId}/leadStatuses]
+
 + Parameters
     + groupId (required)
-
-
-### Get lead statues [GET]
 
 + Response 200 (application/json)
 
@@ -772,7 +771,11 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-### Create lead statuses [POST]
+### Create lead statuses [POST /groups/{groupId}/leadStatuses/{id}]
+
++ Parameters
+    + groupId (required)
+    + id (required)
 
 + Request (application/json)
 
@@ -805,7 +808,11 @@ HOST: http://polls.apiblueprint.org/
             "default": true
         }
 
-### Update lead statuses [PUT]
+### Update lead statuses [PUT /groups/{groupId}/leadStatuses/{id}]
+
++ Parameters
+    + groupId (required)
+    + id (required)
 
 + Request (application/json)
 
