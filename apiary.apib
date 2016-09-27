@@ -2710,3 +2710,26 @@ HOST: http://polls.apiblueprint.org/
         }
 
 + Response 200
+
+# Group Countries
+
+## Countries [/countries]
+
+### Get all countries [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "name",
+                "isoCode": "UA",
+                "phoneCode": ["+1", "+7"],
+                "active": true
+            },
+            {
+                "name": "name1",
+                "isoCode": "USA",
+                "phoneCode": ["+2"],
+                "active": flase
+            }
+        ]
