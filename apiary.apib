@@ -2730,6 +2730,27 @@ HOST: http://polls.apiblueprint.org/
                 "name": "name1",
                 "isoCode": "USA",
                 "phoneCode": ["+2"],
-                "active": flase
+                "active": false
+            }
+        ]
+        
+        
+# Group Roles
+
+## Company roles
+
+### Get all company roles [GET /roles{?companyId}]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "123abc",
+                "name": "Owner",
+                "description": "Owner of the company",
+                "permissions": [
+                    "user:create:*"
+                ],
+                "companyId": "123abc"
             }
         ]
