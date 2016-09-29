@@ -1585,6 +1585,43 @@ HOST: http://polls.apiblueprint.org/
                     "sendLoginInformationToEmail": "true",
                     "phonePassword": ""
                 }
+### Update user [PUT /users/{id}]
+
++ Request (application/json)
+
+        {
+            "roleId": "57695b7a82f82e0001079bb4",
+            "name" : "danikkks",
+            "lastname": "last name",
+            "email" : "foo22@bar",
+            "companyId" : "5779fb6342218200012e6348",
+            "position" : "ldksjfldkfjsdlkf",
+            "country" : "1",
+            "userPicture": "base54",
+            "phoneNumber" : "234234234",
+            "sendLoginInformationToEmail": "true",
+            "phonePassword": ""
+        }
+
+
++ Response 201 (application/json)
+
+    + Body
+
+                {
+                    "id": "57695b7a82f82e0001079bb4",
+                    "roleId": "57695b7a82f82e0001079bb4",
+                    "name" : "danikkks",
+                    "lastname": "last name",3
+                    "email" : "foo22@bar",
+                    "companyId" : "5779fb6342218200012e6348",
+                    "position" : "ldksjfldkfjsdlkf",
+                    "country" : "1",
+                    "userPicture": "base54",
+                    "phoneNumber" : "234234234",
+                    "sendLoginInformationToEmail": "true",
+                    "phonePassword": ""
+                }
 
 # Group Lead schemas
 
