@@ -1542,7 +1542,9 @@ HOST: http://polls.apiblueprint.org/
             "companyId" : "5779fb6342218200012e6348",
             "position" : "ldksjfldkfjsdlkf",
             "country" : "1",
+            "personalPhone": "+380640508979",
             "phoneNumber" : "234234234",
+            "personalPhone": "+380640508979",
             "sendLoginInformationToEmail": "true",
             "phonePassword": ""
         }
@@ -1561,6 +1563,7 @@ HOST: http://polls.apiblueprint.org/
             "position" : "ldksjfldkfjsdlkf",
             "country" : "1",
             "userPicture": "base54",
+            "personalPhone": "+380640508979",
             "phoneNumber" : "234234234",
             "sendLoginInformationToEmail": "true",
             "phonePassword": ""
@@ -1569,22 +1572,21 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 201 (application/json)
 
-    + Body
-
-                {
-                    "id": "57695b7a82f82e0001079bb4",
-                    "roleId": "57695b7a82f82e0001079bb4",
-                    "name" : "danikkks",
-                    "lastname": "last name",
-                    "email" : "foo22@bar",
-                    "companyId" : "5779fb6342218200012e6348",
-                    "position" : "ldksjfldkfjsdlkf",
-                    "country" : "1",
-                    "userPicture": "base54",
-                    "phoneNumber" : "234234234",
-                    "sendLoginInformationToEmail": "true",
-                    "phonePassword": ""
-                }
+        {
+            "id": "57695b7a82f82e0001079bb4",
+            "roleId": "57695b7a82f82e0001079bb4",
+            "name" : "danikkks",
+            "lastname": "last name",
+            "email" : "foo22@bar",
+            "companyId" : "5779fb6342218200012e6348",
+            "position" : "ldksjfldkfjsdlkf",
+            "country" : "1",
+            "userPicture": "base54",
+            "personalPhone": "+380640508979",
+            "phoneNumber" : "234234234",
+            "sendLoginInformationToEmail": "true",
+            "phonePassword": ""
+        }
 ### Update user [PUT /users/{id}]
 
 + Request (application/json)
@@ -1598,6 +1600,7 @@ HOST: http://polls.apiblueprint.org/
             "position" : "ldksjfldkfjsdlkf",
             "country" : "1",
             "userPicture": "base54",
+            "personalPhone": "+380640508979",
             "phoneNumber" : "234234234",
             "sendLoginInformationToEmail": "true",
             "phonePassword": ""
@@ -1606,22 +1609,21 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-    + Body
-
-                {
-                    "id": "57695b7a82f82e0001079bb4",
-                    "roleId": "57695b7a82f82e0001079bb4",
-                    "name" : "danikkks",
-                    "lastname": "last name",
-                    "email" : "foo22@bar",
-                    "companyId" : "5779fb6342218200012e6348",
-                    "position" : "ldksjfldkfjsdlkf",
-                    "country" : "1",
-                    "userPicture": "base54",
-                    "phoneNumber" : "234234234",
-                    "sendLoginInformationToEmail": "true",
-                    "phonePassword": ""
-                }
+        {
+            "id": "57695b7a82f82e0001079bb4",
+            "roleId": "57695b7a82f82e0001079bb4",
+            "name" : "danikkks",
+            "lastname": "last name",
+            "email" : "foo22@bar",
+            "companyId" : "5779fb6342218200012e6348",
+            "position" : "ldksjfldkfjsdlkf",
+            "country" : "1",
+            "userPicture": "base54",
+            "phoneNumber" : "234234234",
+            "personalPhone": "+380640508979",
+            "sendLoginInformationToEmail": "true",
+            "phonePassword": ""
+        }
 
 # Group Lead schemas
 
@@ -2652,7 +2654,7 @@ HOST: http://polls.apiblueprint.org/
             },
             {
                 "id": "abc124",
-                "serviceId": "abc132"
+                "serviceId": "abc132",
                 "type": "Standard",
                 "price": {
                     "usd": 59,
@@ -2668,7 +2670,7 @@ HOST: http://polls.apiblueprint.org/
             },
             {
                 "id": "abc125",
-                "serviceId": "abc132"
+                "serviceId": "abc132",
                 "type": "Professional",
                 "price": {
                     "usd": 59,
