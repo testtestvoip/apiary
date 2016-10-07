@@ -2752,8 +2752,62 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
 # Group Registration
-## Confirmations
-### Confirm registration [POST /confirmations]
+
+## Users
+
+### Introducing name & email [POST /customers]
+
++ Request (application/json) 
+
+        {
+            "name": "John",
+            "email": "john.doe@gmail.com"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": "abc",
+            "name": "John",
+            "email": "john.doe@gmail.com",
+            "companyId": "abcd"
+        }
+        
+### Registration completion [POST /registrations]
+
++ Request (application/json)
+
+        {
+            "id": "abc",
+            "name": "John",
+            "email": "john.doe@gmail.com",
+            "lastname": "Doe",
+            "userPicture": "base64",
+            "companyId": "abcd",
+            "emailConfirmed": true,
+            "position": "CEO",
+            "country": "USA,
+            "personalPhone": "+180630508979"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": "abc",
+            "name": "John",
+            "email": "john.doe@gmail.com",
+            "lastname": "Doe",
+            "userPicture": "base64",
+            "companyId": "abcd",
+            "emailConfirmed": true,
+            "position": "CEO",
+            "country": "USA,
+            "personalPhone": "+180630508979"
+        }
+
+## Confirmations [/confirmations]
+
+### Confirm registration [POST]
 
 + Request (application/json)
 
