@@ -2592,6 +2592,21 @@ HOST: http://polls.apiblueprint.org/
 
 ## Services
 
+### Get service by id [GET /services/{serviceId}]
+
++ Parameters
+    + serviceId (required)
+
++ Response 200 (application/json)
+
+        {
+          "id": "abc123",
+          "name": "Lead Management System",
+          "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
+          "ref": "https://voiptimecloud.com/lead-management-system",
+          "available": true
+        }
+
 ### Get just active services for current company [GET /services{?active}]
 
 + Parameters
