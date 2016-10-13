@@ -10,7 +10,6 @@ HOST: http://polls.apiblueprint.org/
 ### Get notifications [GET /notifications{?viewed}]
 
 + Parameters
-    + userId (required)
     + viewed (optional)
     
 + Response 200 (application/json)
@@ -1536,17 +1535,18 @@ HOST: http://polls.apiblueprint.org/
                 ],
                 "companyId": "57695b7a82f82e0001079bb4"
             },
-            "name" : "danikkks",
-            "lastname": "last name",
-            "email" : "foo22@bar",
-            "companyId" : "5779fb6342218200012e6348",
-            "position" : "ldksjfldkfjsdlkf",
-            "country" : "1",
-            "personalPhone": "+380640508979",
-            "phoneNumber" : "234234234",
-            "personalPhone": "+380640508979",
-            "sendLoginInformationToEmail": "true",
-            "phonePassword": ""
+           "name":"lsskdjflskdj",
+           "lastname":"slkdjflkj",
+           "position":"sdfsdf",
+           "country":"57fb67986d4d1a0001779c2",
+           "email" : "foo22@bar",
+           "userPicture":"empty",
+           "sendLoginInformationToEmail":false,
+           "phone":{
+              "phoneId": "10fb67986d4d1a00017881c4",
+              "number":"34234234234"
+           },
+           "personalPhone": "+380640508979"
         }
 
 
@@ -1555,74 +1555,79 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-            "roleId": "57695b7a82f82e0001079bb4",
-            "name" : "danikkks",
-            "lastname": "last name",
-            "email" : "foo22@bar",
-            "companyId" : "5779fb6342218200012e6348",
-            "position" : "ldksjfldkfjsdlkf",
-            "country" : "1",
-            "userPicture": "base54",
-            "personalPhone": "+380640508979",
-            "phoneNumber" : "234234234",
-            "sendLoginInformationToEmail": "true",
-            "phonePassword": ""
+           "name":"lsskdjflskdj",
+           "lastname":"slkdjflkj",
+           "position":"sdfsdf",
+           "country":"57fb67986d4d1a0001779c2",
+           "roleId":"57fb67986d4d1a00017881c3",
+           "email" : "foo22@bar",
+           "userPicture":"empty",
+           "sendLoginInformationToEmail":false,
+           "phone":{
+              "number":"34234234234"
+           },
+           "personalPhone": "+380640508979"
         }
 
 
 + Response 201 (application/json)
 
         {
-            "id": "57695b7a82f82e0001079bb4",
-            "roleId": "57695b7a82f82e0001079bb4",
-            "name" : "danikkks",
-            "lastname": "last name",
-            "email" : "foo22@bar",
-            "companyId" : "5779fb6342218200012e6348",
-            "position" : "ldksjfldkfjsdlkf",
-            "country" : "1",
-            "userPicture": "base54",
-            "personalPhone": "+380640508979",
-            "phoneNumber" : "234234234",
-            "sendLoginInformationToEmail": "true",
-            "phonePassword": ""
+           "id": "57695b7a82f82e0001079bb4",
+           "name":"lsskdjflskdj",
+           "lastname":"slkdjflkj",
+           "position":"sdfsdf",
+           "country":"57fb67986d4d1a0001779c2",
+           "roleId":"57fb67986d4d1a00017881c3",
+           "email" : "foo22@bar",
+           "userPicture":"empty",
+           "sendLoginInformationToEmail":false,
+           "phone":{
+              "phoneId": "10fb67986d4d1a00017881c4",
+              "number":"34234234234"
+           },
+           "personalPhone": "+380640508979"
         }
+
 ### Update user [PUT /users/{id}]
 
 + Request (application/json)
 
         {
-            "roleId": "57695b7a82f82e0001079bb4",
-            "name" : "danikkks",
-            "lastname": "last name",
-            "email" : "foo22@bar",
-            "companyId" : "5779fb6342218200012e6348",
-            "position" : "ldksjfldkfjsdlkf",
-            "country" : "1",
-            "userPicture": "base54",
-            "personalPhone": "+380640508979",
-            "phoneNumber" : "234234234",
-            "sendLoginInformationToEmail": "true",
-            "phonePassword": ""
+           "id": "57695b7a82f82e0001079bb4",
+           "name":"lsskdjflskdj",
+           "lastname":"slkdjflkj",
+           "position":"sdfsdf",
+           "country":"57fb67986d4d1a0001779c2",
+           "roleId":"57fb67986d4d1a00017881c3",
+           "email" : "foo22@bar",
+           "userPicture":"empty",
+           "sendLoginInformationToEmail":false,
+           "phone":{
+              "phoneId": "10fb67986d4d1a00017881c4",
+              "number":"34234234234"
+           },
+           "personalPhone": "+380640508979"
         }
 
 
 + Response 200 (application/json)
 
         {
-            "id": "57695b7a82f82e0001079bb4",
-            "roleId": "57695b7a82f82e0001079bb4",
-            "name" : "danikkks",
-            "lastname": "last name",
-            "email" : "foo22@bar",
-            "companyId" : "5779fb6342218200012e6348",
-            "position" : "ldksjfldkfjsdlkf",
-            "country" : "1",
-            "userPicture": "base54",
-            "phoneNumber" : "234234234",
-            "personalPhone": "+380640508979",
-            "sendLoginInformationToEmail": "true",
-            "phonePassword": ""
+           "id": "57695b7a82f82e0001079bb4",
+           "name":"lsskdjflskdj",
+           "lastname":"slkdjflkj",
+           "position":"sdfsdf",
+           "country":"57fb67986d4d1a0001779c2",
+           "roleId":"57fb67986d4d1a00017881c3",
+           "email" : "foo22@bar",
+           "userPicture":"empty",
+           "sendLoginInformationToEmail":false,
+           "phone":{
+              "phoneId": "10fb67986d4d1a00017881c4",
+              "number":"34234234234"
+           },
+           "personalPhone": "+380640508979"
         }
 
 # Group Lead schemas
