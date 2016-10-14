@@ -1488,6 +1488,53 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Users
 
+
+## All company users [/users{?offset}{?limit}]
+
+### All company users [GET]
+
+
++ Parameters
+    + offset (optional)
+    + limit (optional)
+
++ Response 200 (application/json)
+
+        [
+            {
+               "id": "57695b7a82f82e0001079bb4",
+               "name":"lsskdjflskdj",
+               "lastname":"slkdjflkj",
+               "position":"sdfsdf",
+               "country":"57fb67986d4d1a0001779c2",
+               "roleId":"57fb67986d4d1a00017881c3",
+               "email" : "foo22@bar",
+               "userPicture":"empty",
+               "sendLoginInformationToEmail":false,
+               "phone":{
+                  "phoneId": "10fb67986d4d1a00017881c4",
+                  "number":"34234234234"
+               },
+               "personalPhone": "+380640508979"
+            },
+            {
+               "id": "57695b7a82f82e0001079bb4",
+               "name":"lsskdjflskdj",
+               "lastname":"slkdjflkj",
+               "position":"sdfsdf",
+               "country":"57fb67986d4d1a0001779c2",
+               "roleId":"57fb67986d4d1a00017881c3",
+               "email" : "foo22@bar",
+               "userPicture":"empty",
+               "sendLoginInformationToEmail":false,
+               "phone":{
+                  "phoneId": "10fb67986d4d1a00017881c4",
+                  "number":"34234234234"
+               },
+               "personalPhone": "+380640508979"
+            }
+        ]
+
 ## User ids [/usersIds]
 
 ### Get user ids [GET]
@@ -2644,7 +2691,7 @@ HOST: http://polls.apiblueprint.org/
                 "name": "Lead Management System",
                 "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
                 "ref": "https://voiptimecloud.com/lead-management-system",
-                "available": true
+                "available": false
             }
         ]
         
