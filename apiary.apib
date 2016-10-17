@@ -79,10 +79,7 @@ HOST: http://polls.apiblueprint.org/
             "enabledCallRecording": true
         }
 
-### Get gateway by company id [GET /gateways/{?companyId}]
-
-+ Parameters
-    + companyId (required)
+### Get gateway by company id [GET /gateways]
 
 + Response 200 (application/json)
 
@@ -2689,6 +2686,13 @@ HOST: http://polls.apiblueprint.org/
                 "id": "abc456",
                 "name": "Lead Management System",
                 "description": "Filter all leads and convert the most qualified of them into sales-ready customers.",
+                "ref": "https://voiptimecloud.com/lead-management-system",
+                "available": false
+            },
+            {
+                "id": "abc456",
+                "name": "Predictive",
+                "description": "Bla bla bla",
                 "ref": "https://voiptimecloud.com/lead-management-system",
                 "available": false
             }
