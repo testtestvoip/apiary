@@ -1333,18 +1333,60 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
 
+
 ### Change name event [POST /leads/{leadId}/name]
 
 + Request (application/json)
 
         {
-            "id": 1,
+            "leadId": 2,
             "dateTime": "2005-08-09T18:31:42",
             "groupId": 1,
-            "text": "bal bla bla",
             "nameReplacement": "new name"
         }
+        
++ Response 201 (application/json)
 
+
+### Change surname event [POST /leads/{leadId}/surname]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "surnameReplacement": "new surname"
+        }
+        
++ Response 201 (application/json)
+
+
+### Change sorce event [POST /leads/{leadId}/source]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "sourceId": 10
+        }
+        
++ Response 201 (application/json)
+
+### Change status event [POST /leads/{leadId}/status]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "statusId": 12
+        }
+        
++ Response 201 (application/json)
 
 ## Lead callbacks [/callbacks]
 
@@ -2313,7 +2355,7 @@ HOST: http://polls.apiblueprint.org/
             ]
         }
 
-### Save lead table settings [PUT]
+### Save lead table settings [POST]
 
 + Request 200 (application/json)
 
@@ -2331,7 +2373,6 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
         {
-            "id": "1",
             "companyId": "dsff23f213f223",
             "contactsPerPage": 10,
             "fields": [
