@@ -1388,6 +1388,62 @@ HOST: http://polls.apiblueprint.org/
         
 + Response 201 (application/json)
 
+
+### Change email event [POST /leads/{leadId}/email]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "email": "blabla@bla.com"
+        }
+        
++ Response 201 (application/json)
+
+
+### Add phone event [POST /leads/{leadId}/phones]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "phoneTypeId": 4,
+            "number": "+38093123132423"
+        }
+        
++ Response 201 (application/json)
+
+
+### Activate phone event [PUT /leads/{leadId}/phones/activate]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "phoneId": 4
+        }
+        
++ Response 201 (application/json)
+
+### Activate phone event [DELETE /leads/{leadId}/phones/deactivate]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "phoneId": 4
+        }
+        
++ Response 201 (application/json)
+
 ## Lead callbacks [/callbacks]
 
 ### Get lead callbacks [GET /callbacks{?leadId}]
