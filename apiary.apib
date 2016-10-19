@@ -1402,6 +1402,20 @@ HOST: http://polls.apiblueprint.org/
         
 + Response 201 (application/json)
 
+### Change dynamic data event [POST /leads/{leadId}/dynamicData]
+
++ Request (application/json)
+
+        {
+            "leadId": 2,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "key": "field name",
+            "value": "value"
+        }
+        
++ Response 201 (application/json)
+
 
 ### Add phone event [POST /leads/{leadId}/phones]
 
