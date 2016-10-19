@@ -1333,6 +1333,18 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
 
+### Change name event [POST /leads/{leadId}/name]
+
++ Request (application/json)
+
+        {
+            "id": 1,
+            "dateTime": "2005-08-09T18:31:42",
+            "groupId": 1,
+            "text": "bal bla bla",
+            "nameReplacement": "new name"
+        }
+
 
 ## Lead callbacks [/callbacks]
 
@@ -2301,7 +2313,7 @@ HOST: http://polls.apiblueprint.org/
             ]
         }
 
-### Save lead table settings [POST]
+### Save lead table settings [PUT]
 
 + Request 200 (application/json)
 
@@ -2319,6 +2331,7 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
         {
+            "id": "1",
             "companyId": "dsff23f213f223",
             "contactsPerPage": 10,
             "fields": [
