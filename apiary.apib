@@ -1301,13 +1301,15 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "dateTime": "2005-08-09T18:31:42",
-            "leadId": 1,
-            "groupId": 1,
-            "type": "LeadCommentedEvent"
-        }
+        [
+            {
+                "id": 1,
+                "dateTime": "2005-08-09T18:31:42",
+                "leadId": 1,
+                "groupId": 1,
+                "type": "LeadCommentedEvent"
+            }
+        ]
 
 ### Add comment [POST /leads/{leadId}/comments]
 
