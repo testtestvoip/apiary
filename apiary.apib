@@ -1329,11 +1329,12 @@ HOST: http://polls.apiblueprint.org/
         
 + Response 200 (application/json)
 
-### Delete comment [DELETE /leads/{leadId}/comments/{commentId}]
+### Delete comment [POST /leads/{leadId}/comments/{commentId}{?type}]
 
 + Parameters
     + commentId (required)
     + leadId (required)
+    + type (required, string, `delete`)
     
 + Request (application/json)
 
