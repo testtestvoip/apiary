@@ -1806,6 +1806,33 @@ HOST: http://polls.apiblueprint.org/
         ]
 
 
+## Search by last name [/users{lastname}{?offset}{?limit}]
+
+### Get array [GET]
+
++ Parameters
+    + lastname (required)
+    + offset (optional)
+    + limit (optional)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "57da979c9f55bb415786a98c",
+                "roleId": "57da95709f55bb3e4c911425",
+                "name": "customer_000001471203374",
+                "lastname": "Doe",
+                "email": "customer_000001471203374@gmail.com",
+                "companyId": "57da979c9f55bb415786a989",
+                "emailConfirmed": true,
+                "position": "Drug diller",
+                "country": "Cuba"
+            }
+        ]
+
+
+
 
 ## Questions Collection [/users/{id}{?exclude}]
 
