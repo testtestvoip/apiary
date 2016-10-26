@@ -1784,29 +1784,7 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
 
-## User ids [/usersIds]
-
-### Get user ids [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "id": "5779fb6342218200012e6349",
-                "name" : "danikkks",
-                "lastname": "sav",
-                "roleName": "role name1"
-            },
-            {
-                "id": "5779fb6342218200012e6349",
-                "name" : "andriy",
-                "lastname": "test",
-                "roleName": "role name2"
-            }
-        ]
-
-
-## Search by last name [/users{lastname}{?offset}{?limit}]
+## Search by last name [/users/{lastname}{?offset}{?limit}]
 
 ### Get array [GET]
 
@@ -1834,7 +1812,7 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Questions Collection [/users/{id}{?exclude}]
+## User crud [/users/{id}{?exclude}]
 
 ### Get user without picture [GET]
 
@@ -1872,6 +1850,11 @@ HOST: http://polls.apiblueprint.org/
            "personalPhone": "+380640508979"
         }
 
+### Delete user [DELETE /users/{userId}]
+
++ Request (application/json)
+
++ Response 200 (application/json)
 
 ### Create user [POST /users]
 
