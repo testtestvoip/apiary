@@ -589,9 +589,54 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Virtual group
 
+## Virtual group operations [/virualGroup/{groupId}]
+
++ Parameters
+    + groupId (required)
+
+
+### Update vritual group [PUT]
+
++ Request (application/json)
+
+        {
+            "schemaId": 8,
+            "name": "Window users virual group1231231",
+            "leadsPerPage": 20,
+            "description": "Nerds wi1231232n"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "schemaId": 8,
+            "name": "Window users virual group1231231",
+            "leadsPerPage": 20,
+            "description": "Nerds wi1231232n"
+        }
+        
+### Update vritual group [GET]
+
+
++ Response 200 (application/json)
+
+        {
+            "schemaId": 8,
+            "id": 2,
+            "name": "Window users virual group1231231",
+            "leadsPerPage": 20,
+            "description": "Nerds wi1231232n",
+            "cloneLeadOnCustomerCreation": false,
+            "defaultGroup": false,
+            "virtual": false
+        }
+
 ## Manipulation on leads of virtual group [/virualGroup/{groupId}/leads]
 
 ### Add leads to vritual group [PUT]
+
++ Parameters
+    + groupId (required)
 
 + Request (application/json)
 
@@ -603,11 +648,16 @@ HOST: http://polls.apiblueprint.org/
 
 ### Delete leads from virtual group [POST]
 
++ Parameters
+    + groupId (required)
+
+
 + Request (application/json)
 
         {
             leadIds: [3]
         }
+    
 
 + Response 200 (application/json)
 
