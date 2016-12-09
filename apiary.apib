@@ -615,6 +615,10 @@ HOST: http://polls.apiblueprint.org/
             "virtual": false
         }
 
+### Delete vritual group [DELETE]
+
++ Response 200 (application/json)
+
 ## Manipulate leads of virtual group [/virualGroups/{groupId}/leads]
 
 ### Add leads to vritual group [PUT]
@@ -789,6 +793,16 @@ HOST: http://polls.apiblueprint.org/
             "cloneLeadOnCustomerCreation": false,
             "defaultGroup": false
         }
+
+
+### Delete group by id [DELETE]
+
++ Parameters
+    + groupId (required)
+    
++ Request 200 (application/json)
+
++ Response 200 (application/json)
 
 
 ### Update group with id [PUT]
