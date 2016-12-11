@@ -1103,29 +1103,35 @@ HOST: http://polls.apiblueprint.org/
 ## Leads [/leads{?limit}{?offset}]
 
 ### Create lead [POST]
+    
++ Request(application/json)
 
-+ Request (application/json)
+    + Headers
 
-        {
-            "companyId": "abc",
-            "groupId": 1,
-            "statusId": 1,
-            "email": "foo@bar",
-            "phones": [
-                {
-                    "id": 1,
-                    "number": "123",
-                    "active": true,
-                    "label": "foo"
-                }
-            ],
-            "name": "bar",
-            "surname": "baz",
-            "dynamicData": {
-                "foo": "bar"
-            },
-            "sourceId": 1
-        }
+            Api-Key: 87391c7a-55ec-4dae-9479-7d04dd3f8ae9
+    
+    + Body
+    
+            {
+                "companyId": "abc",
+                "groupId": 1,
+                "statusId": 1,
+                "email": "foo@bar",
+                "phones": [
+                    {
+                        "id": 1,
+                        "number": "123",
+                        "active": true,
+                        "label": "foo"
+                    }
+                ],
+                "name": "bar",
+                "surname": "baz",
+                "dynamicData": {
+                    "foo": "bar"
+                },
+                "sourceId": 1
+            }
 
 + Response 200 (application/json)
 
