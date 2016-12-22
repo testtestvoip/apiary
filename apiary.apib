@@ -3330,3 +3330,111 @@ HOST: http://polls.apiblueprint.org/
             ],
             "sourceId": 1
         }
+        
+        
+        
+# Group Calendar
+## Tasks [/tasks]
+
+### Find task by id [GET /{id}]
+
++ Parameters
+    + id (required)
+    
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "name": "lead call back",
+            "type": "CALLBACK",
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES | HOURS"
+            }, 
+            "leadId": 120
+        }
+
+### Create task [POST]
+
++ Request (application/json)
+
+        {
+            "name": "lead call back",
+            "type": "CALLBACK",
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES | HOURS"
+            }, 
+            "leadId": 120
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "name": "lead call back",
+            "type": "CALLBACK",
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES | HOURS"
+            }, 
+            "leadId": 120
+        }
+
+
+### Update task [PUT /{id}]
+
++ Parameters
+    + id (required)
+
++ Request (application/json)
+
+        {
+            "name": "lead call back",
+            "type": "CALLBACK",
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES | HOURS"
+            }, 
+            "leadId": 120
+        }
+        
+        
++ Response 201 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "name": "lead call back",
+            "type": "CALLBACK",
+            "dateTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "beforeReminder": {
+                "number": 15,
+                "unit": "MINUTES | HOURS"
+            }, 
+            "leadId": 120
+        }
+
+### Delete task [DELETE /{id}]
+
++ Parameters
+    + id (required)
+    
++ Request (application/json)
+
++ Response 200 (application/json)
