@@ -3334,7 +3334,7 @@ HOST: http://polls.apiblueprint.org/
         
         
 # Group Calendar
-## Tasks
+## Tasks [/tasks]
 
 ### Find task by id [GET /tasks/{id}]
 
@@ -3359,7 +3359,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120
         }
 
-### Create task [POST /tasks]
+### Create task [POST]
 
 + Request (application/json)
 
@@ -3414,7 +3414,7 @@ HOST: http://polls.apiblueprint.org/
         }
         
         
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {
             "id": "584d57dc6148f45e1d0adb27",
@@ -3438,3 +3438,45 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
 + Response 200 (application/json)
+
+### Search tasks [POST /tasks/search]
+
++ Request (application/json)
+
+        {
+            "userId": ["584d57dc6148f45e1d0adb27"],
+            "from": "2005-08-09T18:31:42",
+            "to": "2005-08-09T18:31:42"
+        }
+        
+        
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "584d57dc6148f45e1d0adb27",
+                "name": "lead call back",
+                "type": "CALLBACK",
+                "dateTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla",
+                "beforeReminder": {
+                    "number": 15,
+                    "unit": "MINUTES | HOURS"
+                }, 
+                "leadId": 120
+            },
+            {
+                "id": "584d57dc6143rwsfewf2323",
+                "name": "lead call back1",
+                "type": "CALLBACK",
+                "dateTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla212143",
+                "beforeReminder": {
+                    "number": 15,
+                    "unit": "MINUTES | HOURS"
+                }, 
+                "leadId": 120
+            }
+        ]
