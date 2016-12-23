@@ -3334,9 +3334,9 @@ HOST: http://polls.apiblueprint.org/
         
         
 # Group Calendar
-## Tasks [/tasks]
+## Tasks
 
-### Find task by id [GET /{id}]
+### Find task by id [GET /tasks/{id}]
 
 + Parameters
     + id (required)
@@ -3359,7 +3359,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120
         }
 
-### Create task [POST]
+### Create task [/tasks POST]
 
 + Request (application/json)
 
@@ -3393,7 +3393,7 @@ HOST: http://polls.apiblueprint.org/
         }
 
 
-### Update task [PUT /{id}]
+### Update task [PUT /tasks/{id}]
 
 + Parameters
     + id (required)
@@ -3430,7 +3430,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120
         }
 
-### Delete task [DELETE /{id}]
+### Delete task [DELETE /tasks/{id}]
 
 + Parameters
     + id (required)
