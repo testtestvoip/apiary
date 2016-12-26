@@ -3334,9 +3334,9 @@ HOST: http://polls.apiblueprint.org/
         
         
 # Group Calendar
-## Tasks [/tasks]
+## Tasks [/tasks/callback/]
 
-### Find task by id [GET /tasks/{id}]
+### Find task by id [GET /tasks/callback/{id}]
 
 + Parameters
     + id (required)
@@ -3348,15 +3348,13 @@ HOST: http://polls.apiblueprint.org/
         {
             "id": "584d57dc6148f45e1d0adb27",
             "name": "lead call back",
-            "type": "CALLBACK",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES | HOURS"
-            }, 
-            "leadId": 120
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
         }
 
 ### Create task [POST]
@@ -3365,15 +3363,13 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "name": "lead call back",
-            "type": "CALLBACK",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES | HOURS"
-            }, 
-            "leadId": 120
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
         }
 
 + Response 201 (application/json)
@@ -3381,19 +3377,17 @@ HOST: http://polls.apiblueprint.org/
         {
             "id": "584d57dc6148f45e1d0adb27",
             "name": "lead call back",
-            "type": "CALLBACK",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES | HOURS"
-            }, 
-            "leadId": 120
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
         }
 
 
-### Update task [PUT /tasks/{id}]
+### Update task [PUT /tasks/callback/{id}]
 
 + Parameters
     + id (required)
@@ -3402,15 +3396,13 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "name": "lead call back",
-            "type": "CALLBACK",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES | HOURS"
-            }, 
-            "leadId": 120
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
         }
         
         
@@ -3419,18 +3411,16 @@ HOST: http://polls.apiblueprint.org/
         {
             "id": "584d57dc6148f45e1d0adb27",
             "name": "lead call back",
-            "type": "CALLBACK",
-            "dateTime": "2005-08-09T18:31:42",
-            "finishTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla",
-            "beforeReminder": {
-                "number": 15,
-                "unit": "MINUTES | HOURS"
-            }, 
-            "leadId": 120
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
         }
 
-### Delete task [DELETE /tasks/{id}]
+### Delete task [DELETE /tasks/callback/{id}]
 
 + Parameters
     + id (required)
@@ -3456,27 +3446,23 @@ HOST: http://polls.apiblueprint.org/
             {
                 "id": "584d57dc6148f45e1d0adb27",
                 "name": "lead call back",
-                "type": "CALLBACK",
-                "dateTime": "2005-08-09T18:31:42",
-                "finishTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla",
-                "beforeReminder": {
-                    "number": 15,
-                    "unit": "MINUTES | HOURS"
-                }, 
-                "leadId": 120
+                "leadName": "Kolya Smith",
+                "leadId": 120,
+                "phoneNumber": "25342",
+                "phoneId": 2,
+                "createDate": "2005-08-09T18:31:42",
+                "triggerTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla"
             },
             {
-                "id": "584d57dc6143rwsfewf2323",
-                "name": "lead call back1",
-                "type": "CALLBACK",
-                "dateTime": "2005-08-09T18:31:42",
-                "finishTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla212143",
-                "beforeReminder": {
-                    "number": 15,
-                    "unit": "MINUTES | HOURS"
-                }, 
-                "leadId": 120
+                "id": "584d57dc6148f45e1d0adb27",
+                "name": "lead call back",
+                "leadName": "Kolya Smith",
+                "leadId": 120,
+                "phoneNumber": "25342",
+                "phoneId": 2,
+                "createDate": "2005-08-09T18:31:42",
+                "triggerTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla"
             }
         ]
