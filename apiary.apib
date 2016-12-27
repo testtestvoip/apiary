@@ -7,16 +7,20 @@ HOST: http://polls.apiblueprint.org/
 
 ## Notification 
 
-### Get notifications [GET /notifications{?viewed}]
+### Notifications stream [GET /notifications.stream]
 
-+ Parameters
-    + viewed (optional)
++ Request 200 (application/json)
++ Response 200 (application/json)
+
+### Get all notifications [GET /notifications]
+
++ Request 200 (application/json)
     
 + Response 200 (application/json)
 
         [
             {
-                "viewed": false,
+                "id": "ewfewf2232fwdwqd",
                 "event": {
                     "type": "",
                     "context": {
