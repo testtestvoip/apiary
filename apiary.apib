@@ -3513,3 +3513,230 @@ HOST: http://polls.apiblueprint.org/
                 "note": "note blabla bla"
             }
         ]
+        
+        
+## Group Calendar settings [/calendars/settings]
+
+### Find calendar settings [GET]
+
++ Request (application/json)
+        
+        
++ Response 200 (application/json)
+
+        {
+            "companyId" : "584d57dc6148f45e1d0adb26",
+            "firstWeekDay" : "SUNDAY",
+            "dayConfigurations" : [
+                {
+                    "dayOfWeek" : "FRIDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "WEDNESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "MONDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "THURSDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "TUESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SUNDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SATURDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }
+            ],
+            "defaultReminderSettings" : {
+                "defaultReminder" : {
+                    "number" : NumberLong(5),
+                    "unit" : "MINUTES"
+                },
+                "email" : false
+            }
+        }
+
+
+### Update calendar settings [PUT]
+
++ Request (application/json)
+
+        {
+            "companyId" : "584d57dc6148f45e1d0adb26",
+            "firstWeekDay" : "SUNDAY",
+            "dayConfigurations" : [
+                {
+                    "dayOfWeek" : "FRIDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "WEDNESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "MONDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "THURSDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "TUESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SUNDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SATURDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }
+            ],
+            "defaultReminderSettings" : {
+                "defaultReminder" : {
+                    "number" : NumberLong(5),
+                    "unit" : "MINUTES"
+                },
+                "email" : false
+            }
+        }     
+        
++ Response 200 (application/json)
+
+        {
+            "companyId" : "584d57dc6148f45e1d0adb26",
+            "firstWeekDay" : "SUNDAY",
+            "dayConfigurations" : [
+                {
+                    "dayOfWeek" : "FRIDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "WEDNESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "MONDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "THURSDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "TUESDAY",
+                    "workDay" : true,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SUNDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }, 
+                {
+                    "dayOfWeek" : "SATURDAY",
+                    "workDay" : false,
+                    "businessHours" : {
+                        "start" : "09:30:00",
+                        "end" : "19:30:00"
+                    }
+                }
+            ],
+            "defaultReminderSettings" : {
+                "defaultReminder" : {
+                    "number" : NumberLong(5),
+                    "unit" : "MINUTES"
+                },
+                "email" : false
+            }
+        }
