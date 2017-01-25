@@ -3356,7 +3356,7 @@ HOST: http://polls.apiblueprint.org/
         
         
 # Group Calendar
-## Tasks [/tasks/callback/]
+## Callback [/tasks/callback/]
 
 ### Find task by id [GET /tasks/callback/{id}]
 
@@ -3375,7 +3375,8 @@ HOST: http://polls.apiblueprint.org/
             "phoneId": 2,
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla"
+            "note": "note blabla bla",
+            "type": "CALLBACK"
         }
 
 ### Create task [POST]
@@ -3402,6 +3403,7 @@ HOST: http://polls.apiblueprint.org/
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
             "note": "note blabla bla"
+            "type": "CALLBACK"
         }
 
 
@@ -3418,7 +3420,8 @@ HOST: http://polls.apiblueprint.org/
             "phoneNumber": "25342",
             "phoneId": 2,
             "triggerTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla"
+            "note": "note blabla bla",
+            "type": "CALLBACK"
         }
         
         
@@ -3432,7 +3435,8 @@ HOST: http://polls.apiblueprint.org/
             "phoneId": 2,
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
-            "note": "note blabla bla"
+            "note": "note blabla bla",
+            "type": "CALLBACK"
         }
 
 ### Delete task [DELETE /tasks/callback/{id}]
@@ -3444,12 +3448,113 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-### Search tasks by user id [GET /tasks/search]
+
+## Meeting [/tasks/meeting/]
+
+### Find meeting by id [GET /tasks/meeting/{id}]
+
++ Parameters
+    + id (required)
+    
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "type": "MEETING"
+        }
+
+### Create meeting [POST]
+
++ Request (application/json)
+
+        {
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "triggerTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "type": "MEETING"
+        }
+
+
+### Update task [PUT /tasks/meeting/{id}]
+
++ Parameters
+    + id (required)
+
++ Request (application/json)
+
+        {
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "triggerTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "type": "MEETING"
+        }
+        
+        
++ Response 200 (application/json)
+
+        {
+            "id": "584d57dc6148f45e1d0adb27",
+            "leadName": "Kolya Smith",
+            "leadId": 120,
+            "phoneNumber": "25342",
+            "phoneId": 2,
+            "createDate": "2005-08-09T18:31:42",
+            "triggerTime": "2005-08-09T18:31:42",
+            "finishTime": "2005-08-09T18:31:42",
+            "note": "note blabla bla",
+            "type": "MEETING"
+        }
+
+### Delete task [DELETE /tasks/meeting/{id}]
+
++ Parameters
+    + id (required)
+    
++ Request (application/json)
+
++ Response 200 (application/json)
+
+## Task search
+
+### Search tasks by user id [GET /tasks/search{?userId}{?from}{?to}{?offset}]
 
 + Parameters
     + userId (required)
     + from (required)
     + to (optional)
+    + offset (required)
 
 + Request (application/json)
         
@@ -3465,7 +3570,9 @@ HOST: http://polls.apiblueprint.org/
                 "phoneId": 2,
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla"
+                "finishTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla",
+                "type": "MEETING"
             },
             {
                 "id": "584d57dc6148f45e1d0adb27",
@@ -3475,16 +3582,18 @@ HOST: http://polls.apiblueprint.org/
                 "phoneId": 2,
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla"
+                "note": "note blabla bla",
+                "type": "CALLBACK"
             }
         ]
         
-### Search tasks by company id [GET /tasks/search]
+### Search tasks by company id [GET /tasks/search{?companyId}{?from}{?to}{?offset}]
 
 + Parameters
     + companyId (required)
     + from (required)
     + to (optional)
+    + offset (required)
 
 + Request (application/json)
         
@@ -3500,7 +3609,9 @@ HOST: http://polls.apiblueprint.org/
                 "phoneId": 2,
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla"
+                "finishTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla",
+                "type": "MEETING"
             },
             {
                 "id": "584d57dc6148f45e1d0adb27",
@@ -3510,10 +3621,46 @@ HOST: http://polls.apiblueprint.org/
                 "phoneId": 2,
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
-                "note": "note blabla bla"
+                "note": "note blabla bla",
+                "type": "CALLBACK"
             }
         ]
         
+### Search tasks by lead id [GET /tasks{?leadId}]
+
++ Parameters
+    + leadId (required)
+
++ Request (application/json)
+        
+        
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "584d57dc6148f45e1d0adb27",
+                "leadName": "Kolya Smith",
+                "leadId": 120,
+                "phoneNumber": "25342",
+                "phoneId": 2,
+                "createDate": "2005-08-09T18:31:42",
+                "triggerTime": "2005-08-09T18:31:42",
+                "finishTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla",
+                "type": "MEETING"
+            },
+            {
+                "id": "584d57dc6148f45e1d0adb27",
+                "leadName": "Kolya Smith",
+                "leadId": 120,
+                "phoneNumber": "25342",
+                "phoneId": 2,
+                "createDate": "2005-08-09T18:31:42",
+                "triggerTime": "2005-08-09T18:31:42",
+                "note": "note blabla bla",
+                "type": "CALLBACK"
+            }
+        ]
         
 ## Group Calendar settings [/calendars/settings]
 
