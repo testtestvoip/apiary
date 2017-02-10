@@ -2577,12 +2577,12 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Filter
 
-## Group filters [/filters{?groupId}]
+## Group filters [/groups/{groupId}/filters]
 
 ### Get group filters [GET]
 
 + Parameters
-    + groupId (optional)
+    + groupId (required)
 
 + Response 200 (application/json)
 
@@ -2595,51 +2595,15 @@ HOST: http://polls.apiblueprint.org/
                     {
                         "id": 42,
                         "fieldId": 34,
-                        "operator": "=",
-                        "value": "foo",
-                        "dynamic": "false"
+                        "operator": "BETWEEN",
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
                     },
                     {
                         "id": 43,
                         "fieldId": 35,
-                        "operator": ">",
-                        "value": "4",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 44,
-                        "fieldId": 35,
-                        "operator": ">=",
-                        "value": "5",
-                        "dynamic": "true"
-                    },
-                    {
-                        "id": 45,
-                        "fieldId": 36,
-                        "operator": "<",
-                        "value": "3",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 46,
-                        "fieldId": 37,
-                        "operator": "<=",
-                        "value": "2",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 47,
-                        "fieldId": 38,
-                        "operator": "!=",
-                        "value": "foo",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 48,
-                        "fieldId": 39,
-                        "operator": "like",
-                        "value": "%foo",
-                        "dynamic": "false"
+                        "operator": "EQUALS",
+                        "value": "4"
                     }
                 ]
             }
@@ -2655,27 +2619,14 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 33,
             "criterias": [
                 {
-                    "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                    "id": 43,
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
 
-+ Request (application/json)
-
-        {
-            "name": "All",
-            "criterias": [
-                {
-                    "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
-                }
-            ]
-        }
 
 + Response 201 (application/json)
 
@@ -2685,34 +2636,20 @@ HOST: http://polls.apiblueprint.org/
             "groupId": 33,
             "criterias": [
                 {
-                    "id": 1
-                    "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
-                }
-            ]
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "id": 1
-            "name": "All",
-            "companyId": "sf2827278f29f2f",
-            "criterias": [
-                {
-                    "id": 1
-                    "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                     "id": 43,
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
 
 
-## All filters [/filters]
+## Companies filters [/companies/{comapanyId}/filters]
+
++ Parameters
+    + comapanyId (required)
+
 
 ### Get company filters [GET]
 
@@ -2721,57 +2658,21 @@ HOST: http://polls.apiblueprint.org/
         [
             {
                 "id": 21,
-                "name": "All",
-                "groupId": 33,
+                "name": "company filter",
+                "companyId": "ef24f432f4eg3qg3w4"
                 "criterias": [
                     {
                         "id": 42,
                         "fieldId": 34,
-                        "operator": "=",
-                        "value": "foo",
-                        "dynamic": "false"
+                        "operator": "BETWEEN",
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
                     },
                     {
                         "id": 43,
                         "fieldId": 35,
-                        "operator": ">",
-                        "value": "4",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 44,
-                        "fieldId": 35,
-                        "operator": ">=",
-                        "value": "5",
-                        "dynamic": "true"
-                    },
-                    {
-                        "id": 45,
-                        "fieldId": 36,
-                        "operator": "<",
-                        "value": "3",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 46,
-                        "fieldId": 37,
-                        "operator": "<=",
-                        "value": "2",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 47,
-                        "fieldId": 38,
-                        "operator": "!=",
-                        "value": "foo",
-                        "dynamic": "false"
-                    },
-                    {
-                        "id": 48,
-                        "fieldId": 39,
-                        "operator": "like",
-                        "value": "%foo",
-                        "dynamic": "false"
+                        "operator": "EQUALS",
+                        "value": "4"
                     }
                 ]
             }
@@ -2785,10 +2686,17 @@ HOST: http://polls.apiblueprint.org/
             "name": "All",
             "criterias": [
                 {
+                    "id": 42,
                     "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                    "operator": "BETWEEN",
+                    "from": "2005-08-09T18:31:42",
+                    "to": "2005-08-09T18:31:42"
+                },
+                {
+                    "id": 43,
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
@@ -2802,27 +2710,82 @@ HOST: http://polls.apiblueprint.org/
             "companyId": "sf2827278f29f2f",
             "criterias": [
                 {
-                    "id": 1
+                    "id": 42,
                     "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                    "operator": "BETWEEN",
+                    "from": "2005-08-09T18:31:42",
+                    "to": "2005-08-09T18:31:42"
+                },
+                {
+                    "id": 43,
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
 
 
 
-## Specific filter operations [/filters/{filterId}]
+## Specific filter operations [/filters]
 
-### Delete filter [DELETE]
+### Get all filters [GET]
+
++ Request (application/json)
+
++ Response 200
+
+        [
+            {
+                "id": 21,
+                "name": "group filter",
+                "groupId": 33,
+                "criterias": [
+                    {
+                        "id": 42,
+                        "fieldId": 34,
+                        "operator": "BETWEEN",
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    },
+                    {
+                        "id": 43,
+                        "fieldId": 35,
+                        "operator": "EQUALS",
+                        "value": "4"
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "name": "company filter",
+                "companyId": "ef24f432f4eg3qg3w4"
+                "criterias": [
+                    {
+                        "id": 42,
+                        "fieldId": 34,
+                        "operator": "BETWEEN",
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    },
+                    {
+                        "id": 43,
+                        "fieldId": 35,
+                        "operator": "EQUALS",
+                        "value": "4"
+                    }
+                ]
+            }
+        ]
+
+### Delete filter [DELETE /filters/{filterId}]
 
 + Parameters
     + filterId (required)
 
 + Response 200
 
-### Update filter [PUT]
+### Update filter [PUT /filters/{filterId}]
 
 + Parameters
     + filterId (required)
@@ -2837,51 +2800,15 @@ HOST: http://polls.apiblueprint.org/
                 {
                     "id": 42,
                     "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                    "operator": "BETWEEN",
+                    "from": "2005-08-09T18:31:42",
+                    "to": "2005-08-09T18:31:42"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": ">",
-                    "value": "4",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 44,
-                    "fieldId": 35,
-                    "operator": ">=",
-                    "value": "5",
-                    "dynamic": "true"
-                },
-                {
-                    "id": 45,
-                    "fieldId": 36,
-                    "operator": "<",
-                    "value": "3",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 46,
-                    "fieldId": 37,
-                    "operator": "<=",
-                    "value": "2",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 47,
-                    "fieldId": 38,
-                    "operator": "!=",
-                    "value": "foo",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 48,
-                    "fieldId": 39,
-                    "operator": "like",
-                    "value": "%foo",
-                    "dynamic": "false"
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
@@ -2896,51 +2823,15 @@ HOST: http://polls.apiblueprint.org/
                 {
                     "id": 42,
                     "fieldId": 34,
-                    "operator": "=",
-                    "value": "foo",
-                    "dynamic": "false"
+                    "operator": "BETWEEN",
+                    "from": "2005-08-09T18:31:42",
+                    "to": "2005-08-09T18:31:42"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": ">",
-                    "value": "4",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 44,
-                    "fieldId": 35,
-                    "operator": ">=",
-                    "value": "5",
-                    "dynamic": "true"
-                },
-                {
-                    "id": 45,
-                    "fieldId": 36,
-                    "operator": "<",
-                    "value": "3",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 46,
-                    "fieldId": 37,
-                    "operator": "<=",
-                    "value": "2",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 47,
-                    "fieldId": 38,
-                    "operator": "!=",
-                    "value": "foo",
-                    "dynamic": "false"
-                },
-                {
-                    "id": 48,
-                    "fieldId": 39,
-                    "operator": "like",
-                    "value": "%foo",
-                    "dynamic": "false"
+                    "operator": "EQUALS",
+                    "value": "4"
                 }
             ]
         }
@@ -3376,6 +3267,7 @@ HOST: http://polls.apiblueprint.org/
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
             "note": "note blabla bla",
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "type": "CALLBACK"
         }
 
@@ -3388,6 +3280,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "triggerTime": "2005-08-09T18:31:42",
             "note": "note blabla bla"
         }
@@ -3398,6 +3291,7 @@ HOST: http://polls.apiblueprint.org/
             "id": "584d57dc6148f45e1d0adb27",
             "leadName": "Kolya Smith",
             "leadId": 120,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "phoneNumber": "25342",
             "phoneId": 2,
             "createDate": "2005-08-09T18:31:42",
@@ -3419,6 +3313,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "triggerTime": "2005-08-09T18:31:42",
             "note": "note blabla bla",
             "type": "CALLBACK"
@@ -3433,6 +3328,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
             "note": "note blabla bla",
@@ -3466,6 +3362,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
             "finishTime": "2005-08-09T18:31:42",
@@ -3482,6 +3379,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "triggerTime": "2005-08-09T18:31:42",
             "finishTime": "2005-08-09T18:31:42",
             "note": "note blabla bla"
@@ -3495,6 +3393,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
             "finishTime": "2005-08-09T18:31:42",
@@ -3515,6 +3414,7 @@ HOST: http://polls.apiblueprint.org/
             "leadId": 120,
             "phoneNumber": "25342",
             "phoneId": 2,
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "triggerTime": "2005-08-09T18:31:42",
             "finishTime": "2005-08-09T18:31:42",
             "note": "note blabla bla",
@@ -3529,6 +3429,7 @@ HOST: http://polls.apiblueprint.org/
             "leadName": "Kolya Smith",
             "leadId": 120,
             "phoneNumber": "25342",
+            "userId": "3rw3r3qwefwf3qwg4h53",
             "phoneId": 2,
             "createDate": "2005-08-09T18:31:42",
             "triggerTime": "2005-08-09T18:31:42",
@@ -3587,7 +3488,7 @@ HOST: http://polls.apiblueprint.org/
             }
         ]
         
-### Search tasks by company id [GET /tasks/search{?companyId}{?from}{?to}{?offset}]
+### Search tasks by company id [GET /tasks/search{?from}{?to}{?offset}]
 
 + Parameters
     + companyId (required)
@@ -3607,6 +3508,7 @@ HOST: http://polls.apiblueprint.org/
                 "leadId": 120,
                 "phoneNumber": "25342",
                 "phoneId": 2,
+                "userId": "3rw3r3qwefwf3qwg4h53",
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
                 "finishTime": "2005-08-09T18:31:42",
@@ -3616,6 +3518,7 @@ HOST: http://polls.apiblueprint.org/
             {
                 "id": "584d57dc6148f45e1d0adb27",
                 "leadName": "Kolya Smith",
+                "userId": "3rw3r3qwefwf3qwg4h53",
                 "leadId": 120,
                 "phoneNumber": "25342",
                 "phoneId": 2,
@@ -3643,6 +3546,7 @@ HOST: http://polls.apiblueprint.org/
                 "leadId": 120,
                 "phoneNumber": "25342",
                 "phoneId": 2,
+                "userId": "3rw3r3qwefwf3qwg4h53",
                 "createDate": "2005-08-09T18:31:42",
                 "triggerTime": "2005-08-09T18:31:42",
                 "finishTime": "2005-08-09T18:31:42",
@@ -3653,6 +3557,7 @@ HOST: http://polls.apiblueprint.org/
                 "id": "584d57dc6148f45e1d0adb27",
                 "leadName": "Kolya Smith",
                 "leadId": 120,
+                "userId": "3rw3r3qwefwf3qwg4h53",
                 "phoneNumber": "25342",
                 "phoneId": 2,
                 "createDate": "2005-08-09T18:31:42",
