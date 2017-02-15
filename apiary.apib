@@ -2577,7 +2577,7 @@ HOST: http://polls.apiblueprint.org/
 
 # Group Filter
 
-## Group filters [/groups/{groupId}/filters]
+## Filters [/filters]
 
 ### Get group filters [GET]
 
@@ -2590,20 +2590,27 @@ HOST: http://polls.apiblueprint.org/
             {
                 "id": 21,
                 "name": "All",
-                "groupId": 33,
-                "criterias": [
+                "conjunction": "AND",
+                "searchCriteria": [
                     {
-                        "id": 42,
                         "fieldId": 34,
+                        "exist": true,
                         "operator": "BETWEEN",
-                        "from": "2005-08-09T18:31:42",
-                        "to": "2005-08-09T18:31:42"
+                        "range": {
+                            "from": "2005-08-09T18:31:42",
+                            "to": "2005-08-09T18:31:42"
+                        }
+                    },
+                    {
+                        "fieldId": 35,
+                        "operator": "EQUALS",
+                        "exist": true,
+                        "singleValue": "4"
                     },
                     {
                         "id": 43,
                         "fieldId": 35,
-                        "operator": "EQUALS",
-                        "value": "4"
+                        "exist": false
                     }
                 ]
             }
@@ -2616,13 +2623,27 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "name": "All",
-            "groupId": 33,
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
+                {
+                    "fieldId": 34,
+                    "exist": true,
+                    "operator": "BETWEEN",
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "exist": true,
+                    "singleValue": "4"
+                },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": "EQUALS",
-                    "value": "4"
+                    "exist": false
                 }
             ]
         }
@@ -2631,24 +2652,32 @@ HOST: http://polls.apiblueprint.org/
 + Response 201 (application/json)
 
         {
-            "id": 1
+            "id": "fs234dfs243dfsd",
             "name": "All",
-            "groupId": 33,
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
                 {
-                     "id": 43,
+                    "fieldId": 34,
+                    "exist": true,
+                    "operator": "BETWEEN",
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
                     "fieldId": 35,
                     "operator": "EQUALS",
-                    "value": "4"
+                    "exist": true,
+                    "singleValue": "4"
+                },
+                {
+                    "id": 43,
+                    "fieldId": 35,
+                    "exist": false
                 }
             ]
         }
-
-
-## Companies filters [/companies/{comapanyId}/filters]
-
-+ Parameters
-    + comapanyId (required)
 
 
 ### Get company filters [GET]
@@ -2658,21 +2687,28 @@ HOST: http://polls.apiblueprint.org/
         [
             {
                 "id": 21,
-                "name": "company filter",
-                "companyId": "ef24f432f4eg3qg3w4",
-                "criterias": [
+                "name": "All",
+                "conjunction": "AND",
+                "searchCriteria": [
                     {
-                        "id": 42,
                         "fieldId": 34,
+                        "exist": true,
                         "operator": "BETWEEN",
-                        "from": "2005-08-09T18:31:42",
-                        "to": "2005-08-09T18:31:42"
+                        "range": {
+                            "from": "2005-08-09T18:31:42",
+                            "to": "2005-08-09T18:31:42"
+                        }
+                    },
+                    {
+                        "fieldId": 35,
+                        "operator": "EQUALS",
+                        "exist": true,
+                        "singleValue": "4"
                     },
                     {
                         "id": 43,
                         "fieldId": 35,
-                        "operator": "EQUALS",
-                        "value": "4"
+                        "exist": false
                     }
                 ]
             }
@@ -2684,19 +2720,27 @@ HOST: http://polls.apiblueprint.org/
 
         {
             "name": "All",
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
                 {
-                    "id": 42,
                     "fieldId": 34,
+                    "exist": true,
                     "operator": "BETWEEN",
-                    "from": "2005-08-09T18:31:42",
-                    "to": "2005-08-09T18:31:42"
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "exist": true,
+                    "singleValue": "4"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": "EQUALS",
-                    "value": "4"
+                    "exist": false
                 }
             ]
         }
@@ -2705,26 +2749,32 @@ HOST: http://polls.apiblueprint.org/
 + Response 201 (application/json)
 
         {
-            "id": 1
+            "id": "fs234dfs243dfsd",
             "name": "All",
-            "companyId": "sf2827278f29f2f",
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
                 {
-                    "id": 42,
                     "fieldId": 34,
+                    "exist": true,
                     "operator": "BETWEEN",
-                    "from": "2005-08-09T18:31:42",
-                    "to": "2005-08-09T18:31:42"
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "exist": true,
+                    "singleValue": "4"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": "EQUALS",
-                    "value": "4"
+                    "exist": false
                 }
             ]
         }
-
 
 
 ## Specific filter operations [/filters]
@@ -2738,41 +2788,28 @@ HOST: http://polls.apiblueprint.org/
         [
             {
                 "id": 21,
-                "name": "group filter",
-                "groupId": 33,
-                "criterias": [
+                "name": "All",
+                "conjunction": "AND",
+                "searchCriteria": [
                     {
-                        "id": 42,
                         "fieldId": 34,
+                        "exist": true,
                         "operator": "BETWEEN",
-                        "from": "2005-08-09T18:31:42",
-                        "to": "2005-08-09T18:31:42"
+                        "range": {
+                            "from": "2005-08-09T18:31:42",
+                            "to": "2005-08-09T18:31:42"
+                        }
+                    },
+                    {
+                        "fieldId": 35,
+                        "operator": "EQUALS",
+                        "exist": true,
+                        "singleValue": "4"
                     },
                     {
                         "id": 43,
                         "fieldId": 35,
-                        "operator": "EQUALS",
-                        "value": "4"
-                    }
-                ]
-            },
-            {
-                "id": 22,
-                "name": "company filter",
-                "companyId": "ef24f432f4eg3qg3w4",
-                "criterias": [
-                    {
-                        "id": 42,
-                        "fieldId": 34,
-                        "operator": "BETWEEN",
-                        "from": "2005-08-09T18:31:42",
-                        "to": "2005-08-09T18:31:42"
-                    },
-                    {
-                        "id": 43,
-                        "fieldId": 35,
-                        "operator": "EQUALS",
-                        "value": "4"
+                        "exist": false
                     }
                 ]
             }
@@ -2793,22 +2830,28 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-            "id": 21,
             "name": "All",
-            "groupId": 33,
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
                 {
-                    "id": 42,
                     "fieldId": 34,
+                    "exist": true,
                     "operator": "BETWEEN",
-                    "from": "2005-08-09T18:31:42",
-                    "to": "2005-08-09T18:31:42"
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "exist": true,
+                    "singleValue": "4"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": "EQUALS",
-                    "value": "4"
+                    "exist": false
                 }
             ]
         }
@@ -2816,22 +2859,29 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
         {
-            "id": 21,
+            "id": "fs234dfs243dfsd",
             "name": "All",
-            "groupId": 33,
-            "criterias": [
+            "conjunction": "AND",
+            "searchCriteria": [
                 {
-                    "id": 42,
                     "fieldId": 34,
+                    "exist": true,
                     "operator": "BETWEEN",
-                    "from": "2005-08-09T18:31:42",
-                    "to": "2005-08-09T18:31:42"
+                    "range": {
+                        "from": "2005-08-09T18:31:42",
+                        "to": "2005-08-09T18:31:42"
+                    }
+                },
+                {
+                    "fieldId": 35,
+                    "operator": "EQUALS",
+                    "exist": true,
+                    "singleValue": "4"
                 },
                 {
                     "id": 43,
                     "fieldId": 35,
-                    "operator": "EQUALS",
-                    "value": "4"
+                    "exist": false
                 }
             ]
         }
